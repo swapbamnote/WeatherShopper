@@ -29,4 +29,12 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public EventFiringWebDriver getCurrentDriver() {
+		return driver;
+	}
+	
+	public void waitForElementLoad() {
+		
+	}
 }

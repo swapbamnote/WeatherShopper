@@ -21,7 +21,8 @@ public class ProductTypeTest {
 		session
 		.init() //store session in testContext and return object of launchpage
 		.openBrowser("chrome")
-		.goToHomePage();
+		.goToHomePage()
+		.goToMoisturizerPage();
 		
 		
 		
