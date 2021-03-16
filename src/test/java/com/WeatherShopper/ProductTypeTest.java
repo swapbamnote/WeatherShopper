@@ -8,6 +8,7 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.Test;
 
 import com.WeatherShopper.base.pages.WeatherShopperPage;
+import com.WeatherShopper.constants.Constants;
 import com.WeatherShopper.listener.WeatherShopperEventListener;
 import com.WeatherShopper.session.WeatherShopperTestSession;
 
@@ -22,7 +23,9 @@ public class ProductTypeTest {
 		.init() //store session in testContext and return object of launchpage
 		.openBrowser("chrome")
 		.goToHomePage()
+		.validator().validateTitle(Constants.HOME_PAGE_TITLE)
 		.goToMoisturizerPage();
+		
 		
 		
 		

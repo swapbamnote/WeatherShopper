@@ -9,12 +9,7 @@ import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.constants.Constants;
 
 public class HomePage extends WeatherShopperBasePage{
-	
-	public HomePage() {
-		System.out.println("*********HomePage Constructor**********");
-		PageFactory.initElements(getCurrentDriver(), this); //creates obj, pass the driver, initialize object but we only use 3rd capability
-	}
-	
+		
 	@FindBy(id=Constants.TEMPERATURE)
 	WebElement temperature;
 	

@@ -1,5 +1,7 @@
 package com.WeatherShopper.base.pages;
 
+import com.WeatherShopper.web.WebConnector;
+
 public interface WeatherShopperApplicationPage {
 
 	//application functions
@@ -7,4 +9,5 @@ public interface WeatherShopperApplicationPage {
 	WeatherShopperPage goToMoisturizerPage();
 	void goToSunscreenPage();
 	void goToCheckoutPage();
+	WebConnector validator();
 }

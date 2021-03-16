@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Mar 16 20:43:26 CET 2021</td>
+<td>Started on:</td><td>Tue Mar 16 23:33:15 CET 2021</td>
 </tr>
-<tr><td>Total time:</td><td>4 seconds (4348 ms)</td>
+<tr><td>Total time:</td><td>6 seconds (6382 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,8 +76,14 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.WeatherShopper.ProductTypeTest.chooseProductType()'><b>chooseProductType</b><br>Test class: com.WeatherShopper.ProductTypeTest</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.WeatherShopper.pages.application.HomePage.goToMoisturizerPage(HomePage.java:29)
+<td><div><pre>java.lang.AssertionError: expected [xxxx] but found [Current Temperature]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at com.WeatherShopper.web.WeatherShopperValidationDriver.validateTitle(WeatherShopperValidationDriver.java:11)
 	at com.WeatherShopper.ProductTypeTest.chooseProductType(ProductTypeTest.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -107,9 +113,15 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace716972621", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace716972621'><pre>java.lang.NullPointerException
-	at com.WeatherShopper.pages.application.HomePage.goToMoisturizerPage(HomePage.java:29)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1098737173", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1098737173'><pre>java.lang.AssertionError: expected [xxxx] but found [Current Temperature]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at com.WeatherShopper.web.WeatherShopperValidationDriver.validateTitle(WeatherShopperValidationDriver.java:11)
 	at com.WeatherShopper.ProductTypeTest.chooseProductType(ProductTypeTest.java:25)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -140,7 +152,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>4</td>
+<td>6</td>
 <td>com.WeatherShopper.ProductTypeTest@7671cb68</td></tr>
 </table><p>
 </body>

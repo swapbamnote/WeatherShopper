@@ -10,8 +10,10 @@ import com.WeatherShopper.web.WebConnector;
 public class WeatherShopperBasePage implements WeatherShopperPage{
 	
 	public WeatherShopperBasePage() {
-		System.out.println("*********HomePage Constructor**********");
+		System.out.println("*********BasePage Constructor**********");
 		PageFactory.initElements(getCurrentDriver(), this); //creates obj, pass the driver, initialize object but we only use 3rd capability
+		
+		getSession().setCurrentPage(this);
 	}
 
 	public WeatherShopperPage openBrowser(String browserName) {
@@ -47,9 +49,8 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		
 	}
 
-	public void validator() {
-		// TODO Auto-generated method stub
-		
+	public WebConnector validator() {
+		return getSession().getCon();
 	}
 	
 	public WeatherShopperTestSession getSession() {

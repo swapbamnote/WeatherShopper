@@ -11,6 +11,7 @@ public class WeatherShopperTestSession {
 
 	//This test session HAS A webconnector
 	WebConnector con;
+	WeatherShopperPage currentPage; //because validate function has to return the object of current page
 	
 	public WeatherShopperTestSession() {
 		con = new WeatherShopperDriver();
@@ -25,5 +26,12 @@ public class WeatherShopperTestSession {
 	
 	public WebConnector getCon() {
 		return con;
+	}
+	
+	public WeatherShopperPage getCurrentPage() {
+		return currentPage;
+	}
+	public void setCurrentPage(WeatherShopperPage currentPage) {
+		this.currentPage = currentPage;
 	}
 }

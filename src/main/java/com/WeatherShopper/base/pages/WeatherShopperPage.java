@@ -17,7 +17,7 @@ public interface WeatherShopperPage extends WeatherShopperApplicationPage{
 	void goToSunscreenPage();
 	void goToCheckoutPage();
 	
-	void validator();
+	WebConnector validator();
 	
 	//WebConnector getDriver();
 	

@@ -1,9 +1,11 @@
 package com.WeatherShopper.web;
 
-public interface WeatherShopperWebConnector extends WebConnector {
+import com.WeatherShopper.base.pages.WeatherShopperPage;
 
-	void validateTitle();
-	
+public interface WeatherShopperWebConnector {
+
+	WeatherShopperPage validateTitle(String expectedTitle);
+	WeatherShopperPage validateText(String locator, String expectedText);
 	
 	/*void openBrowser(String browserName);
 	void navigate(String url);
