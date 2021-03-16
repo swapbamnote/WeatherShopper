@@ -1,6 +1,6 @@
 package com.WeatherShopper.base.pages;
 
-public interface WeatherShopperApplication {
+public interface WeatherShopperApplicationPage {
 
 	//application functions
 	void goToHomePage();
