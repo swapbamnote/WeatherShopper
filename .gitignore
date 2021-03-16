@@ -18,3 +18,5 @@ src/main/java/com/WeatherShopper/.DS_Store
 .classpath
 .project
 .settings/
+.idea/
+WeatherShopper.iml
