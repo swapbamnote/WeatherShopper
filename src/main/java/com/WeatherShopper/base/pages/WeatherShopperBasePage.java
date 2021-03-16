@@ -13,7 +13,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		System.out.println("*********BasePage Constructor**********");
 		PageFactory.initElements(getCurrentDriver(), this); //creates obj, pass the driver, initialize object but we only use 3rd capability
 		
-		getSession().setCurrentPage(this);
+		getSession().setCurrentPage(this); //set the page in the session
 	}
 
 	public WeatherShopperPage openBrowser(String browserName) {
@@ -49,7 +49,9 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		
 	}
 
-	public WebConnector validator() {
+	public WebConnector validator(boolean stopExecution) {
+		// update the flag in web layer
+		getSession().getCon().setStopExecution(stopExecution);
 		return getSession().getCon();
 	}
 	

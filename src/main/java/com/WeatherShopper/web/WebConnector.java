@@ -11,7 +11,10 @@ public interface WebConnector extends WeatherShopperWebConnector{
 	void quit();
 	EventFiringWebDriver getCurrentDriver();
 	void waitForElementLoad();
-	
 	WeatherShopperTestSession getSession(); 
+	boolean isStopExecution();
+	void setStopExecution(boolean stopExecution);
+	void assertAll();
+	
 
 }

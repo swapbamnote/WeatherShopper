@@ -23,7 +23,7 @@ public class ProductTypeTest {
 		.init() //store session in testContext and return object of launchpage
 		.openBrowser("chrome")
 		.goToHomePage()
-		.validator().validateTitle(Constants.HOME_PAGE_TITLE)
+		.validator(false).validateTitle(Constants.HOME_PAGE_TITLE)
 		.goToMoisturizerPage();
 		
 		

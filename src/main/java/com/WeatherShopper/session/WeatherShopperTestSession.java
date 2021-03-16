@@ -31,7 +31,12 @@ public class WeatherShopperTestSession {
 	public WeatherShopperPage getCurrentPage() {
 		return currentPage;
 	}
+	
 	public void setCurrentPage(WeatherShopperPage currentPage) {
 		this.currentPage = currentPage;
+	}
+	
+	public void end() {
+		getCon().assertAll();
 	}
 }

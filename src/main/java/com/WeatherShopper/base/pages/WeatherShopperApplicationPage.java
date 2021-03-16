@@ -9,5 +9,5 @@ public interface WeatherShopperApplicationPage {
 	WeatherShopperPage goToMoisturizerPage();
 	void goToSunscreenPage();
 	void goToCheckoutPage();
-	WebConnector validator();
+	WebConnector validator(boolean stopExecution);
 }
