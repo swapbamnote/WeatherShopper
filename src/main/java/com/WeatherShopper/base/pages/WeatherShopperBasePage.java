@@ -2,7 +2,7 @@ package com.WeatherShopper.base.pages;
 
 public class WeatherShopperBasePage implements WeatherShopperPage{
 
-	public void openBrowser() {
+	public void openBrowser(String browserName) {
 		// TODO Auto-generated method stub
 		
 	}

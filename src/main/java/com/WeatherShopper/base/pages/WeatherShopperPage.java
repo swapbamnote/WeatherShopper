@@ -3,7 +3,7 @@ package com.WeatherShopper.base.pages;
 public interface WeatherShopperPage extends WeatherShopperApplicationPage{
 	
 	//normal browser functions
-	void openBrowser();
+	void openBrowser(String browserName);
 	void quit();
 	void getTotalWindows();
 	
