@@ -4,14 +4,26 @@ import org.testng.Reporter;
 
 import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.pages.application.LaunchPage;
+import com.WeatherShopper.web.WeatherShopperDriver;
+import com.WeatherShopper.web.WebConnector;
 
 public class WeatherShopperTestSession {
 
+	//This test session HAS A webconnector
+	WebConnector con;
+	
+	public WeatherShopperTestSession() {
+		con = new WeatherShopperDriver();
+	}
 	public WeatherShopperPage init() {
 		if(Reporter.getCurrentTestResult().getTestContext().getAttribute("session") == null) {
 			Reporter.getCurrentTestResult().getTestContext().setAttribute("session", this);
 		}
 		
 		return new LaunchPage();
+	}
+	
+	public WebConnector getCon() {
+		return con;
 	}
 }

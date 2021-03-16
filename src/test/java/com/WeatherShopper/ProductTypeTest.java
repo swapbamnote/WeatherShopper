@@ -16,18 +16,15 @@ public class ProductTypeTest {
 	@Test
 	public void chooseProductType() {
 		
+		//webconnector is initialize
 		WeatherShopperTestSession session = new WeatherShopperTestSession();//new driver, new browser, onesessionpertest
-		WeatherShopperPage page = session.init();
-		page.openBrowser("Chrome");
+		session
+		.init() //store session in testContext and return object of launchpage
+		.openBrowser("chrome")
+		.goToHomePage();
 		
 		
-		/*System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver/chromedriver");
-		EventFiringWebDriver driver = new EventFiringWebDriver(new ChromeDriver());
-		driver.register(new WeatherShopperEventListener());
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("https://weathershopper.pythonanywhere.com/");*/
 	}
 
 }

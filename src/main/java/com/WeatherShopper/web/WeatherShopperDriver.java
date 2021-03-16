@@ -1,14 +1,27 @@
 package com.WeatherShopper.web;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import com.WeatherShopper.listener.WeatherShopperEventListener;
+
 public class WeatherShopperDriver extends WeatherShopperValidationDriver{
+	EventFiringWebDriver driver ;
 
 	public void openBrowser(String browserName) {
-		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver/chromedriver");
+		driver = new EventFiringWebDriver(new ChromeDriver());
+		driver.register(new WeatherShopperEventListener());
+		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 		
 	}
 
 	public void navigate(String url) {
-		// TODO Auto-generated method stub
+		driver.get(url);
 		
 	}
 

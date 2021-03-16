@@ -1,10 +1,14 @@
 package com.WeatherShopper.base.pages;
 
+import org.testng.Reporter;
+
+import com.WeatherShopper.session.WeatherShopperTestSession;
+import com.WeatherShopper.web.WebConnector;
+
 public class WeatherShopperBasePage implements WeatherShopperPage{
 
-	public void openBrowser(String browserName) {
-		// TODO Auto-generated method stub
-		
+	public WeatherShopperPage openBrowser(String browserName) {
+		return null; //avoid implementation
 	}
 
 	public void quit() {
@@ -17,13 +21,12 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		
 	}
 
-	public void goToHomePage() {
-		// TODO Auto-generated method stub
-		
+	public WeatherShopperPage goToHomePage() {
+		return null;
 	}
 
-	public void goToMoisturizerPage() {
-		// TODO Auto-generated method stub
+	public WeatherShopperPage goToMoisturizerPage() {
+		return null;
 		
 	}
 
@@ -41,6 +44,15 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public WeatherShopperTestSession getSession() {
+		return (WeatherShopperTestSession) Reporter.getCurrentTestResult().getTestContext().getAttribute("session");
+	}
+
+	public WebConnector getDriver() {
+		return getSession().getCon();
+	}
+
 
 
 }
