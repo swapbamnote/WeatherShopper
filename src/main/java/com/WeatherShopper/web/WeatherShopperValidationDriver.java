@@ -19,7 +19,7 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		if(!expectedTitle.equalsIgnoreCase(driver.getTitle())) {
 			softAssert.fail("Titles do not match, Got title as "+driver.getTitle());
 			if(isStopExecution()) {
-				softAssert.assertAll();
+				assertAll();
 			}
 		}
 		return getSession().getCurrentPage();
@@ -46,4 +46,13 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		softAssert.assertAll();
 	}
 
+	public SoftAssert getSoftAssert() {
+		return softAssert;
+	}
+
+	public void setSoftAssert(SoftAssert softAssert) {
+		this.softAssert = softAssert;
+	}
+
+	
 }

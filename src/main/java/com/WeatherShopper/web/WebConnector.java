@@ -1,6 +1,7 @@
 package com.WeatherShopper.web;
 
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.asserts.SoftAssert;
 
 import com.WeatherShopper.session.WeatherShopperTestSession;
 
@@ -15,6 +16,8 @@ public interface WebConnector extends WeatherShopperWebConnector{
 	boolean isStopExecution();
 	void setStopExecution(boolean stopExecution);
 	void assertAll();
+	SoftAssert getSoftAssert();
+	void setSoftAssert(SoftAssert softAssert);
 	
 
 }

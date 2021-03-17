@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Reporter;
 
+import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.listener.WeatherShopperEventListener;
 import com.WeatherShopper.session.WeatherShopperTestSession;
 
@@ -38,6 +39,8 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 	public void waitForElementLoad() {
 		
 	}
+
+	
 	
 	
 }
