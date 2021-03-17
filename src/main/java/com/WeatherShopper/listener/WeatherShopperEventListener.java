@@ -15,7 +15,7 @@ public class WeatherShopperEventListener extends AbstractWebDriverEventListener 
 		
 		boolean error = true;
 		if(error) {
-			getDriver().getSoftAssert().fail("Element not found "+ by);
+			getDriver().fail("Element not found "+ by);
 			getDriver().assertAll(); //end the test
 		}
 	}
@@ -26,5 +26,9 @@ public class WeatherShopperEventListener extends AbstractWebDriverEventListener 
 	
 	public WeatherShopperTestSession getSession() {
 		return (WeatherShopperTestSession) Reporter.getCurrentTestResult().getTestContext().getAttribute("session");
+	}
+	
+	public void log(String message) {
+		getSession().log(message);
 	}
 }

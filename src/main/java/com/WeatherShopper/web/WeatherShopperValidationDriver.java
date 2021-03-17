@@ -15,12 +15,11 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 	SoftAssert softAssert = new SoftAssert();
 
 	public WeatherShopperPage validateTitle(String expectedTitle) {
+		log("Expected Title "+expectedTitle);
+		log("Actual Title "+driver.getTitle());
 		//Assert.assertEquals(driver.getTitle(), expectedTitle);
 		if(!expectedTitle.equalsIgnoreCase(driver.getTitle())) {
-			softAssert.fail("Titles do not match, Got title as "+driver.getTitle());
-			if(isStopExecution()) {
-				assertAll();
-			}
+			fail("Titles do not match, got title as "+driver.getTitle());
 		}
 		return getSession().getCurrentPage();
 	}
@@ -54,5 +53,18 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		this.softAssert = softAssert;
 	}
 
+	public void log(String message) {
+		getSession().log(message);
+	}
 	
+	public void fail(String message) {
+		// fail in extent report
+		getSession().failTest(message);
+		// fail in testng
+		softAssert.fail("Titles do not match, Got title as "+driver.getTitle());
+		// decide if execution has to be stopped
+		if(isStopExecution()) {
+			assertAll();
+		}
+	}
 }

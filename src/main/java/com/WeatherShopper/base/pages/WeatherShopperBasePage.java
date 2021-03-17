@@ -14,6 +14,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		PageFactory.initElements(getCurrentDriver(), this); //creates obj, pass the driver, initialize object but we only use 3rd capability
 		
 		getSession().setCurrentPage(this); //set the page in the session
+		//getSession().takeScreenshot(); take sceenshot whenever any page opens
 	}
 
 	public WeatherShopperPage openBrowser(String browserName) {
@@ -66,5 +67,8 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 	public EventFiringWebDriver getCurrentDriver() {
 		return getSession().getCon().getCurrentDriver();
 	}
-
+	
+	public void log(String message) {
+		getSession().log(message);
+	}
 }

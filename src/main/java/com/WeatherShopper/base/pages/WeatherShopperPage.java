@@ -20,6 +20,6 @@ public interface WeatherShopperPage extends WeatherShopperApplicationPage{
 	WebConnector validator(boolean stopExecution);
 	
 	//WebConnector getDriver();
-	
+	void log(String message);
 	
 }

@@ -18,6 +18,7 @@ public interface WebConnector extends WeatherShopperWebConnector{
 	void assertAll();
 	SoftAssert getSoftAssert();
 	void setSoftAssert(SoftAssert softAssert);
-	
+	void log(String message);
+	void fail(String message);
 
 }

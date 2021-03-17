@@ -13,6 +13,7 @@ import com.WeatherShopper.session.WeatherShopperTestSession;
 public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 
 	public void openBrowser(String browserName) {
+		log("Opening browser");
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver/chromedriver");
 		driver = new EventFiringWebDriver(new ChromeDriver());
 		driver.register(new WeatherShopperEventListener());
