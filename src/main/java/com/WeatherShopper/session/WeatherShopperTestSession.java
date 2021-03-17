@@ -31,7 +31,7 @@ public class WeatherShopperTestSession {
 	public WeatherShopperTestSession() {
 		con = new WeatherShopperDriver();
 	}
-	public WeatherShopperPage init(String testName) {
+	public void init(String testName) {
 		if(Reporter.getCurrentTestResult().getTestContext().getAttribute("session") == null) {
 			Reporter.getCurrentTestResult().getTestContext().setAttribute("session", this);
 		}
@@ -39,7 +39,7 @@ public class WeatherShopperTestSession {
 		//init reports
 		reports = ExtentManager.getReport(Constants.REPORTS_PATH);
 		test = reports.createTest(testName);
-		return new LaunchPage();
+		//return new LaunchPage();
 	}
 	
 	public WebConnector getCon() {
@@ -65,7 +65,9 @@ public class WeatherShopperTestSession {
 	}
 	
 	public void generateReport() {
-		reports.flush();
+		if(reports != null) {
+			reports.flush();
+		}
 	}
 	
 	public void failTest(String failureMessage) {
@@ -92,6 +94,10 @@ public class WeatherShopperTestSession {
 		}
 	}
 	
+	public void skipTest(String message) {
+		test.log(Status.SKIP, message);
+	}
+	
 	public boolean isExecuteListener() {
 		return executeListener;
 	}
@@ -99,6 +105,7 @@ public class WeatherShopperTestSession {
 	public void setExecuteListener(boolean executeListener) {
 		this.executeListener = executeListener;
 	}
+	
 	
 	
 }

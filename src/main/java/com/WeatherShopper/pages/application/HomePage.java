@@ -21,6 +21,7 @@ public class HomePage extends WeatherShopperBasePage{
 	
 	
 	public WeatherShopperPage goToMoisturizerPage() {
+		waitForPageToLoad();
 		moisturizer.click();
 		log("Going to Moisturizer page");
 		return new MoisturizerPage();

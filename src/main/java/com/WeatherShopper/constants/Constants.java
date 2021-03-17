@@ -20,5 +20,13 @@ public class Constants {
 	public static final String HOME_PAGE_TITLE = "Current Temperature";
 	
 	public static final String REPORTS_PATH = System.getProperty("user.dir")+"//reports//";
+	
+	
+	// sheet names
+	public static final String TEST_STATUS_SHEET = "Test Status";
+	
+	//col names
+	public static final String TCID = "TCID";
+	public static final String RUNMODE = "Runmode";
 
 }

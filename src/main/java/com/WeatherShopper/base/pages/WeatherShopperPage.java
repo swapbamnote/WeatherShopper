@@ -10,6 +10,8 @@ public interface WeatherShopperPage extends WeatherShopperApplicationPage{
 	void quit();
 	void getTotalWindows();
 	WeatherShopperTestSession getSession(); 
+	void waitForPageToLoad();
+	void wait(int time);
 	
 	//application functions
 	WeatherShopperPage goToHomePage();
