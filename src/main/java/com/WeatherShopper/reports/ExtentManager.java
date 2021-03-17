@@ -25,7 +25,7 @@ public class ExtentManager {
 			System.out.println(path);
 			 // finalize the report config
 			ExtentSparkReporter sparkReporter = new ExtentSparkReporter(basePath+reportFolder);
-			sparkReporter.config().setReportName("Production Regression Testing");
+			sparkReporter.config().setReportName("Weather shopper Testing");
 			sparkReporter.config().setDocumentTitle("Automation Reports");
 			sparkReporter.config().setTheme(Theme.DARK);
 			sparkReporter.config().setEncoding("utf-8");

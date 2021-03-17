@@ -36,6 +36,7 @@ public class ProductTypeTest {
 	
 	@Test
 	public void chooseProductType() {
+		WeatherShopperPage Page = 
 		session
 		.init("Choose Product Test") //store session in testContext and return object of launchpage
 		.openBrowser("chrome")
@@ -43,6 +44,13 @@ public class ProductTypeTest {
 		.validator(false).validateTitle(Constants.HOME_PAGE_TITLE)
 		.goToMoisturizerPage();
 		
+		/*if(page instanceof MositurizerPage) {
+			page.
+		} else if(page instanceof SunscreenPage) {
+			
+		} else {
+			
+		}*/
 		session.end();
 				
 	}

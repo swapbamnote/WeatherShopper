@@ -26,6 +26,7 @@ public class WeatherShopperTestSession {
 	WeatherShopperPage currentPage; //because validate function has to return the object of current page
 	ExtentReports reports;
 	ExtentTest test;
+	boolean executeListener;
 	
 	public WeatherShopperTestSession() {
 		con = new WeatherShopperDriver();
@@ -90,4 +91,14 @@ public class WeatherShopperTestSession {
 			e.printStackTrace();
 		}
 	}
+	
+	public boolean isExecuteListener() {
+		return executeListener;
+	}
+	
+	public void setExecuteListener(boolean executeListener) {
+		this.executeListener = executeListener;
+	}
+	
+	
 }

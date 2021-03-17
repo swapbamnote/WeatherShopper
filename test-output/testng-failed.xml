@@ -5,7 +5,9 @@
     <classes>
       <class name="com.WeatherShopper.ProductTypeTest">
         <methods>
+          <include name="quit"/>
           <include name="chooseProductType"/>
+          <include name="initialize"/>
         </methods>
       </class> <!-- com.WeatherShopper.ProductTypeTest -->
     </classes>
