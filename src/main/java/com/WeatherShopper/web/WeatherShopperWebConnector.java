@@ -6,11 +6,11 @@ import com.WeatherShopper.base.pages.WeatherShopperPage;
 
 public interface WeatherShopperWebConnector {
 
-	WeatherShopperPage validateTitle(String expectedTitle);
-	WeatherShopperPage validateText(By locator, String expectedText);
-	WeatherShopperPage validateElementPresence(By locator);
+	WeatherShopperPage validateTitle(String expectedTitleKey);
+	WeatherShopperPage validateText(String objectKey, String expectedText);
+	WeatherShopperPage validateElementPresence(String objectKey);
 	
-	boolean isElementPresent(By locator);
+	boolean isElementPresent(String objectKey);
 	/*void openBrowser(String browserName);
 	void navigate(String url);
 	void quit();*/

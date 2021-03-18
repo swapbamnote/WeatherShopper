@@ -10,7 +10,7 @@ import com.WeatherShopper.constants.Constants;
 
 public class HomePage extends WeatherShopperBasePage{
 		
-	@FindBy(id=Constants.TEMPERATURE)
+	/*@FindBy(id=Constants.TEMPERATURE)
 	WebElement temperature;
 	
 	@FindBy(xpath=Constants.BUY_MOISTURIZER)
@@ -18,11 +18,11 @@ public class HomePage extends WeatherShopperBasePage{
 	
 	@FindBy(xpath=Constants.BUY_SUNSCREEN)
 	WebElement sunscreen;
-	
+	*/
 	
 	public WeatherShopperPage goToMoisturizerPage() {
 		waitForPageToLoad();
-		moisturizer.click();
+		getDriver().click(Constants.BUY_MOISTURIZER_KEY);
 		log("Going to Moisturizer page");
 		return new MoisturizerPage();
 	}

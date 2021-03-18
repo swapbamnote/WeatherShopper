@@ -1,6 +1,7 @@
 package com.WeatherShopper.web;
 
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -18,20 +19,22 @@ import com.WeatherShopper.session.WeatherShopperTestSession;
 public abstract class WeatherShopperValidationDriver implements WebConnector {
 
 	EventFiringWebDriver driver;
+	Properties prop;
 	boolean stopExecution;
 	SoftAssert softAssert = new SoftAssert();
 
-	public WeatherShopperPage validateTitle(String expectedTitle) {
-		log("Expected Title "+expectedTitle);
+	public WeatherShopperPage validateTitle(String expectedTitleKey) {
+		log("Expected Title "+prop.getProperty(expectedTitleKey));
 		log("Actual Title "+driver.getTitle());
 		//Assert.assertEquals(driver.getTitle(), expectedTitle);
-		if(!expectedTitle.equalsIgnoreCase(driver.getTitle())) {
+		if(!prop.getProperty(expectedTitleKey).equalsIgnoreCase(driver.getTitle())) {
 			fail("Titles do not match, got title as "+driver.getTitle());
 		}
 		return getSession().getCurrentPage();
 	}
 
-	public WeatherShopperPage validateText(By locator, String expectedText) {
+	public WeatherShopperPage validateText(String objectKey, String expectedText) {
+		By locator = getObject(objectKey);
 		String actualText = driver.findElement(locator).getText();
 		if(!actualText.equals(expectedText)) {
 			fail("Text do not match, got text as "+actualText);
@@ -39,15 +42,16 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		return getSession().getCurrentPage();
 	}
 	
-	public WeatherShopperPage validateElementPresence(By locator) {
+	public WeatherShopperPage validateElementPresence(String objectKey) {
 		
-		if(!isElementPresent(locator)) {
-			fail("locator not found "+locator);
+		if(!isElementPresent(objectKey)) {
+			fail("locator not found "+objectKey);
 		}
 		return getSession().getCurrentPage();
 	}
 	
-	public boolean isElementPresent(By locator) {
+	public boolean isElementPresent(String objectKey) {
+		By locator = getObject(objectKey);
 		getSession().setExecuteListener(false);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		try {
@@ -63,7 +67,26 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 	public WeatherShopperTestSession getSession() {
 		return (WeatherShopperTestSession) Reporter.getCurrentTestResult().getTestContext().getAttribute("session");
 	}
-
+	
+	
+	public By getObject(String objectKey) {
+		log("Finding locator for "+objectKey);
+		By locatorStrategy = null;
+		
+		if(objectKey.endsWith("_id")) 
+			locatorStrategy = By.id(prop.getProperty(objectKey));
+		else if(objectKey.endsWith("_name")) 
+			locatorStrategy = By.name(prop.getProperty(objectKey));
+		else if(objectKey.endsWith("_xpath")) 
+			locatorStrategy = By.xpath(prop.getProperty(objectKey));
+		else if(objectKey.endsWith("_css")) 
+			locatorStrategy = By.cssSelector(prop.getProperty(objectKey));
+		else if(objectKey.endsWith("_tagName")) 
+			locatorStrategy = By.tagName(prop.getProperty(objectKey));
+		
+		return locatorStrategy;
+	}
+	
 	public boolean isStopExecution() {
 		return stopExecution;
 	}

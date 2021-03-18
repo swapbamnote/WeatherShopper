@@ -4,6 +4,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.WeatherShopper.base.pages.WeatherShopperBasePage;
 import com.WeatherShopper.base.pages.WeatherShopperPage;
+import com.WeatherShopper.constants.Constants;
 import com.WeatherShopper.session.WeatherShopperTestSession;
 
 public class LaunchPage extends WeatherShopperBasePage{
@@ -17,7 +18,8 @@ public class LaunchPage extends WeatherShopperBasePage{
 	}
 	
 	public WeatherShopperPage goToHomePage() {
-		getDriver().navigate("https://weathershopper.pythonanywhere.com/");
+		log("Navigating to Weather shopper website");
+		getDriver().navigate(Constants.URL_KEY);
 		return new HomePage();
 	}
 }

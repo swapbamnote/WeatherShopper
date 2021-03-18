@@ -58,7 +58,7 @@ public class ProductTypeTest {
 			new LaunchPage()
 			.openBrowser("chrome")
 			.goToHomePage()
-			.validator(false).validateTitle(Constants.HOME_PAGE_TITLE)
+			.validator(false).validateTitle(Constants.HOME_PAGE_TITLE_KEY)
 			.goToMoisturizerPage();
 		
 		/*if(page instanceof MositurizerPage) {

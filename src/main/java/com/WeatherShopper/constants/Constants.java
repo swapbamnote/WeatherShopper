@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 public class Constants {
 
+	
 	public static final String TEMPERATURE = "temperature";
 	
 	public static final String BUY_MOISTURIZER = "//a[@href='/moisturizer']";
@@ -16,7 +17,6 @@ public class Constants {
 	public static final String HOME_PAGE_TEXT = "h2";
 	public static final By HOME_PAGE_TEXT_LOCATOR = By.tagName(HOME_PAGE_TEXT);
 	
-	
 	public static final String HOME_PAGE_TITLE = "Current Temperature";
 	
 	public static final String REPORTS_PATH = System.getProperty("user.dir")+"//reports//";
@@ -28,5 +28,13 @@ public class Constants {
 	//col names
 	public static final String TCID = "TCID";
 	public static final String RUNMODE = "Runmode";
+
+	//Keys
+	public static final String URL_KEY = "key";
+	public static final String BUY_MOISTURIZER_KEY = "moisturizer_xpath";
+	public static final String HOME_PAGE_TITLE_KEY = "homepage_title";
+	public static final String HOME_PAGE_TEXT_KEY = "homepage_text_tagName";
+
+
 
 }
