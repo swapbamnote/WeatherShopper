@@ -40,19 +40,21 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public WeatherShopperPage goToMoisturizerPage() {
-		return null;
-		
+	public WeatherShopperPage selectMoisturizer(String productContent) {
+		return null;	
 	}
-
+	public WeatherShopperPage selectSunscreen(String productContent) {
+		return null;	
+	}
+	
 	public WeatherShopperPage goToSunscreenPage() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void goToCheckoutPage() {
+	public WeatherShopperPage goToCheckoutPage() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	public WebConnector validator(boolean stopExecution) {

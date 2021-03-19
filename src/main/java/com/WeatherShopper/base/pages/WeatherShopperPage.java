@@ -16,9 +16,9 @@ public interface WeatherShopperPage extends WeatherShopperApplicationPage{
 	//application functions
 	WeatherShopperPage goToHomePage();
 	WeatherShopperPage selectLotionPage();
-	WeatherShopperPage goToMoisturizerPage();
-	WeatherShopperPage goToSunscreenPage();
-	void goToCheckoutPage();
+	WeatherShopperPage selectMoisturizer(String productContent);
+	WeatherShopperPage selectSunscreen(String productContent);
+	WeatherShopperPage goToCheckoutPage();
 	
 	WebConnector validator(boolean stopExecution);
 	

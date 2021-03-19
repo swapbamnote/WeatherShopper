@@ -25,23 +25,24 @@ public class HomePage extends WeatherShopperBasePage{
 	
 	public WeatherShopperPage selectLotionPage() {
 		waitForPageToLoad();
-		String temperatureContent = getCurrentDriver().findElement(By.xpath(Constants.INFO)).getAttribute("data-content");
-		List<Integer> temperatures = getDriver().getTemperature(temperatureContent);
+		String temperatureInfo = getCurrentDriver().findElement(By.xpath(Constants.INFO)).getAttribute("data-content");
+		List<Integer> temperatures = getDriver().getTemperature(temperatureInfo);
 		
 		int maxTemp = Math.max(temperatures.get(0), temperatures.get(1));
 		int minTemp = Math.min(temperatures.get(0), temperatures.get(1));
 		
 		String currentTemp = getDriver().getText(Constants.CURRENT_TEMPERATURE_KEY).replaceAll("[^0-9]", "");
 		
+		
 		if(Integer.parseInt(currentTemp) < minTemp) {
 			getDriver().click(Constants.BUY_MOISTURIZER_KEY);
 			log("Going to Moisturizer page");
 			return new MoisturizerPage();
 		}
-		else if(Integer.parseInt(getDriver().getText(Constants.CURRENT_TEMPERATURE_KEY)) > maxTemp) {
+		else if(Integer.parseInt(currentTemp) > maxTemp) {
 			getDriver().click(Constants.BUY_MOISTURIZER_KEY);
 			log("Going to Sunscreen page");
-			return new SunscreenPage();
+			return new MoisturizerPage();
 		}
 		else {
 			return this;
