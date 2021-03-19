@@ -32,4 +32,10 @@ public class SunscreenPage extends WeatherShopperBasePage{
 		
 		return this;
 	}
+	
+	public WeatherShopperPage goToCheckoutPage() {
+		log("Navigating to Checkout page");
+		getDriver().click(Constants.GoTo_CHECKOUT_BUTTON_KEY);
+		return new CheckoutPage();
+	}
 }

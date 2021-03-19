@@ -46,6 +46,9 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 	public WeatherShopperPage selectSunscreen(String productContent) {
 		return null;	
 	}
+	public WeatherShopperPage addPaymentDetails() {
+		return null;	
+	}
 	
 	public WeatherShopperPage goToSunscreenPage() {
 		// TODO Auto-generated method stub

@@ -38,11 +38,13 @@ public class MoisturizerTest extends TestBase{
 		if(page instanceof MoisturizerPage) {
 			page.selectMoisturizer(data.get("ProductContent1"))
 			.selectMoisturizer(data.get("ProductContent2"))
-			.goToCheckoutPage();
+			.goToCheckoutPage()
+			.addPaymentDetails();
 		} else if(page instanceof SunscreenPage) {
 			page.selectSunscreen(data.get("ProductContent3"))
 			.selectSunscreen(data.get("ProductContent4"))
-			.goToCheckoutPage();
+			.goToCheckoutPage()
+			.addPaymentDetails();
 		} else {
 			page.validator(true).fail("Temperature is between 19°C to 34°C, so can not select any Lotion");
 		}

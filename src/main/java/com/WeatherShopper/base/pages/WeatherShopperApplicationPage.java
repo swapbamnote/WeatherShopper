@@ -11,4 +11,5 @@ public interface WeatherShopperApplicationPage {
 	WeatherShopperPage selectSunscreen(String productContent);
 	WeatherShopperPage goToCheckoutPage();
 	WebConnector validator(boolean stopExecution);
+	WeatherShopperPage addPaymentDetails();
 }
