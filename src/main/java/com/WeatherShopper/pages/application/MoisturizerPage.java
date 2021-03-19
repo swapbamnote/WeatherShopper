@@ -15,6 +15,7 @@ import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.constants.Constants;
 
 public class MoisturizerPage extends WeatherShopperBasePage {
+	
 	@FindAll({
 		 @FindBy(xpath = Constants.DIV_FIRST_ROW), 
 		 @FindBy(xpath = Constants.DIV_SECOND_ROW),
@@ -24,27 +25,21 @@ public class MoisturizerPage extends WeatherShopperBasePage {
 	public WeatherShopperPage selectMoisturizer(String productContent) {
 		waitForPageToLoad();
 		log("Number of products displayed: " +pageOptions.size());
-		List<Integer> priceList = new ArrayList<Integer>();
-		
-		for(WebElement element: pageOptions) {
-			if(element.getText().contains(productContent)) {
-				priceList.add(Integer.parseInt(element.getText().replaceAll("[^0-9]", "")));
-			}
+		WebElement productToBeAdded = getDriver().addToCart(pageOptions,productContent);
+		if(productToBeAdded!=null) {
+			log("Product to be added in the cart: "+productToBeAdded.getText());
+			productToBeAdded.click();
 		}
-        Collections.sort(priceList); 
-        int leastMoisturizer = priceList.get(0);
-        for(WebElement element: pageOptions) {
-        	if(element.getText().contains(String.valueOf(leastMoisturizer))) {
-        		log("Product to be added in the cart: "+element.getText());
-        		element.findElement(By.tagName("button")).click();
-        	}
-        }
+		else {
+			this.validator(true).fail("No matching product found");
+		}
+		
 		return this;
 	}
 	
 	public WeatherShopperPage goToCheckoutPage() {
 		log("Navigating to Checkout page");
-		getDriver().click(Constants.GoTo_CART_BUTTON_KEY);
+		getDriver().click(Constants.GoTo_CHECKOUT_BUTTON_KEY);
 		return new CheckoutPage();
 	}
 }

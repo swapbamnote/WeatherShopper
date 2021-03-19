@@ -3,6 +3,7 @@ package com.WeatherShopper.web;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.asserts.SoftAssert;
 
@@ -29,5 +30,5 @@ public interface WebConnector extends WeatherShopperWebConnector{
 	void clear(String objectKey);
 	String getText(String objectKey);
 	List<Integer> getTemperature(String tempContent);
-
+	WebElement addToCart(List<WebElement> pageOptions, String lotionContent);
 }

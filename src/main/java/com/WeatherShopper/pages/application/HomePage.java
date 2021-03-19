@@ -13,16 +13,6 @@ import com.WeatherShopper.constants.Constants;
 
 public class HomePage extends WeatherShopperBasePage{
 		
-	/*@FindBy(id=Constants.TEMPERATURE)
-	WebElement temperature;
-	
-	@FindBy(xpath=Constants.BUY_MOISTURIZER)
-	WebElement moisturizer;
-	
-	@FindBy(xpath=Constants.BUY_SUNSCREEN)
-	WebElement sunscreen;
-	*/
-	
 	public WeatherShopperPage selectLotionPage() {
 		waitForPageToLoad();
 		String temperatureInfo = getCurrentDriver().findElement(By.xpath(Constants.INFO)).getAttribute("data-content");
@@ -32,7 +22,7 @@ public class HomePage extends WeatherShopperBasePage{
 		int minTemp = Math.min(temperatures.get(0), temperatures.get(1));
 		
 		String currentTemp = getDriver().getText(Constants.CURRENT_TEMPERATURE_KEY).replaceAll("[^0-9]", "");
-		
+		log("Current temperature displayed: "+currentTemp);
 		
 		if(Integer.parseInt(currentTemp) < minTemp) {
 			getDriver().click(Constants.BUY_MOISTURIZER_KEY);
@@ -40,9 +30,9 @@ public class HomePage extends WeatherShopperBasePage{
 			return new MoisturizerPage();
 		}
 		else if(Integer.parseInt(currentTemp) > maxTemp) {
-			getDriver().click(Constants.BUY_MOISTURIZER_KEY);
+			getDriver().click(Constants.BUY_SUNSCREEN_KEY);
 			log("Going to Sunscreen page");
-			return new MoisturizerPage();
+			return new SunscreenPage();
 		}
 		else {
 			return this;
