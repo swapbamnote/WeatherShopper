@@ -46,8 +46,11 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 	public WeatherShopperPage selectSunscreen(String productContent) {
 		return null;	
 	}
-	public WeatherShopperPage addPaymentDetails() {
+	public WeatherShopperPage addPaymentDetails(String email, String ccNum, String expiryDate, String cvv, String zipCode) {
 		return null;	
+	}
+	public WeatherShopperPage getPaymentConfirmation() {
+		return null;
 	}
 	
 	public WeatherShopperPage goToSunscreenPage() {

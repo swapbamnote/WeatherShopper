@@ -53,6 +53,12 @@ public class Constants {
 	public static final String PRICE_TEXT = "Price";
 	public static final String BUTTON_TAG ="button";
 	
+	public static final String PAYMENT_RESULT_PAGE_TEXT = "h2";
+	public static final By PAYMENT_RESULT_PAGE_LOCATOR = By.tagName(HOME_PAGE_TEXT);
+
+	public static final String PAYMENT_SUCCESS_TEXT = "PAYMENT SUCCESS";
+	public static final String PAYMENT_FAILED_TEXT = "PAYMENT FAILED";
+	
 	public static final String HOME_PAGE_TITLE = "Current Temperature";
 	
 	public static final String REPORTS_PATH = System.getProperty("user.dir")+"/reports/";
@@ -79,5 +85,8 @@ public class Constants {
 	public static final String CC_CVV_KEY = "cc_cvv_xpath";
 	public static final String CC_ZIP_CODE_KEY = "cc_zip_xpath";
 	public static final String MAKE_PAYMENT_BUTTON_KEY = "make_payment_xpath";
+	public static final String PAYMENT_RESULT_PAGE_TEXT_KEY = "payment_result_tagName";
+	
+
 
 }

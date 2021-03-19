@@ -19,7 +19,8 @@ public interface WeatherShopperPage extends WeatherShopperApplicationPage{
 	WeatherShopperPage selectMoisturizer(String productContent);
 	WeatherShopperPage selectSunscreen(String productContent);
 	WeatherShopperPage goToCheckoutPage();
-	WeatherShopperPage addPaymentDetails();
+	WeatherShopperPage addPaymentDetails(String email, String ccNum, String expiryDate, String cvv, String zipCode);
+	WeatherShopperPage getPaymentConfirmation();
 	
 	WebConnector validator(boolean stopExecution);
 	
