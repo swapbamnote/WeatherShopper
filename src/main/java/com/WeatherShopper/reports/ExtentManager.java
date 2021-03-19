@@ -18,8 +18,8 @@ public class ExtentManager {
 			Date d = new Date();
 			System.out.println(d.toString().replaceAll(":","-"));
 			String reportFolder=d.toString().replaceAll(":","-");
-			String path = basePath+reportFolder+"\\screenshots";
-			screenshotFolderPath=basePath+reportFolder+"\\screenshots\\";
+			String path = basePath+reportFolder+"/screenshots";
+			screenshotFolderPath=basePath+reportFolder+"/screenshots/";
 			File file  = new File(path);
 			file.mkdirs();
 			System.out.println(path);

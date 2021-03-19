@@ -10,7 +10,7 @@ import com.WeatherShopper.util.Xls_Reader;
 public class TestBase {
 	public WeatherShopperTestSession session;
 	public String testName = null;
-	public Xls_Reader xls = new Xls_Reader(System.getProperty("user.dir")+"//Data.xlsx");
+	public Xls_Reader xls = new Xls_Reader(System.getProperty("user.dir")+"/Data.xlsx");
 	
 
 	@BeforeMethod

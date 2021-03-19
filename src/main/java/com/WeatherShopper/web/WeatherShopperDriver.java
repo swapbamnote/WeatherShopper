@@ -2,6 +2,8 @@ package com.WeatherShopper.web;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +22,7 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 		
 		try {
 			prop = new Properties();
-			FileInputStream fs = new FileInputStream(System.getProperty("user.dir")+ "\\src\\test\\resources\\project.properties");
+			FileInputStream fs = new FileInputStream(System.getProperty("user.dir")+ "/src/test/resources/project.properties");
 			prop.load(fs);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -71,6 +73,25 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 	
 	public void clear(String objectKey) {
 		driver.findElement(getObject(objectKey)).clear();
+	}
+	
+	public String getText(String objectKey) {
+		return driver.findElement(getObject(objectKey)).getText();
+	}
+	
+	
+	public List<Integer> getTemperature(String tempContent) {
+		String [] strArr = tempContent.split("degrees.");
+		int n=0;
+		
+		List<Integer> tempArray = new ArrayList<Integer>();
+
+		for(int i=0; i<strArr.length; i++) {
+			String num = strArr[i].replaceAll("[^0-9]", "");
+			n = Integer.parseInt(num);
+			tempArray.add(n);
+		}
+		return tempArray;
 	}
 	
 }

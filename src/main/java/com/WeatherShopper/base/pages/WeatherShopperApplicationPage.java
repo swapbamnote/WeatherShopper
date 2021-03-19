@@ -6,8 +6,9 @@ public interface WeatherShopperApplicationPage {
 
 	//application functions
 	WeatherShopperPage goToHomePage();
+	WeatherShopperPage selectLotionPage();
 	WeatherShopperPage goToMoisturizerPage();
-	void goToSunscreenPage();
+	WeatherShopperPage goToSunscreenPage();
 	void goToCheckoutPage();
 	WebConnector validator(boolean stopExecution);
 }

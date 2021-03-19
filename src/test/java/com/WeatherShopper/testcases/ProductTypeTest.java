@@ -1,5 +1,6 @@
 package com.WeatherShopper.testcases;
 
+import org.testng.annotations.Test;
 import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +31,7 @@ public class ProductTypeTest extends TestBase{
 	
 	
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "getData")
-	public void chooseProductType(Hashtable<String, String> data) {
+	public void productTypeTest(Hashtable<String, String> data) {
 		session.log(data.toString());
 		
 		if(!DataUtil.isRunnable(testName, xls) || data.get("Runmode").equalsIgnoreCase("N")) {
@@ -39,21 +40,12 @@ public class ProductTypeTest extends TestBase{
 			//skip in testng
 			throw new SkipException("Skipping the test as Runmode is No");
 		}
+		 
+		new LaunchPage()
+		.openBrowser("chrome")
+		.goToHomePage()
+		.validator(false).validateTitle(Constants.HOME_PAGE_TITLE_KEY);
 		
-		WeatherShopperPage Page = 
-			new LaunchPage()
-			.openBrowser("chrome")
-			.goToHomePage()
-			.validator(false).validateTitle(Constants.HOME_PAGE_TITLE_KEY)
-			.goToMoisturizerPage();
-		
-		/*if(page instanceof MositurizerPage) {
-			page.
-		} else if(page instanceof SunscreenPage) {
-			
-		} else {
-			
-		}*/
 		session.end();
 				
 	}

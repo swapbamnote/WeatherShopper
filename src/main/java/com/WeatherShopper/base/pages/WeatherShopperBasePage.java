@@ -36,14 +36,18 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		return null;
 	}
 
+	public WeatherShopperPage selectLotionPage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	public WeatherShopperPage goToMoisturizerPage() {
 		return null;
 		
 	}
 
-	public void goToSunscreenPage() {
+	public WeatherShopperPage goToSunscreenPage() {
 		// TODO Auto-generated method stub
-		
+		return null;
 	}
 
 	public void goToCheckoutPage() {
