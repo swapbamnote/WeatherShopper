@@ -68,6 +68,9 @@ public class WeatherShopperTestSession {
 		if(reports != null) {
 			reports.flush();
 		}
+		// quit the browser
+		if(getCon() !=null)
+			getCon().quit();
 	}
 	
 	public void failTest(String failureMessage) {
