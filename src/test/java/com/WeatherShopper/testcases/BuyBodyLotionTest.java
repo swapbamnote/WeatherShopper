@@ -16,11 +16,11 @@ import com.WeatherShopper.pages.application.SunscreenPage;
 import com.WeatherShopper.tests.base.TestBase;
 import com.WeatherShopper.util.DataUtil;
 
-public class MoisturizerTest extends TestBase{
+public class BuyBodyLotionTest extends TestBase{
 
 	WeatherShopperPage weatherPage ;
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "getData")
-	public void moisturizerTest(Hashtable<String, String> data) {
+	public void buyBodyLotionTest(Hashtable<String, String> data) {
 		session.log(data.toString());
 		
 		if(!DataUtil.isRunnable(testName, xls) || data.get("Runmode").equalsIgnoreCase("N")) {

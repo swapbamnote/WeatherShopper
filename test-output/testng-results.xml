@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-21T17:37:49 CET" name="Default suite" finished-at="2021-03-21T17:38:04 CET" duration-ms="14864">
+  <suite started-at="2021-03-21T17:47:34 CET" name="Default suite" finished-at="2021-03-21T17:47:50 CET" duration-ms="15953">
     <groups>
     </groups>
-    <test started-at="2021-03-21T17:37:49 CET" name="Default test" finished-at="2021-03-21T17:38:04 CET" duration-ms="14864">
-      <class name="com.WeatherShopper.testcases.MoisturizerTest">
-        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.MoisturizerTest@42039326]" started-at="2021-03-21T17:37:49 CET" name="initialize" finished-at="2021-03-21T17:37:49 CET" duration-ms="276" status="PASS">
+    <test started-at="2021-03-21T17:47:34 CET" name="Default test" finished-at="2021-03-21T17:47:50 CET" duration-ms="15953">
+      <class name="com.WeatherShopper.testcases.BuyBodyLotionTest">
+        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@42039326]" started-at="2021-03-21T17:47:34 CET" name="initialize" finished-at="2021-03-21T17:47:34 CET" duration-ms="296" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=MoisturizerTest.moisturizerTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.MoisturizerTest@42039326] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=BuyBodyLotionTest.buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@42039326] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="moisturizerTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.MoisturizerTest@42039326]" started-at="2021-03-21T17:37:49 CET" name="moisturizerTest" data-provider="getData" finished-at="2021-03-21T17:38:03 CET" duration-ms="14046" status="PASS">
+        <test-method signature="buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@42039326]" started-at="2021-03-21T17:47:34 CET" name="buyBodyLotionTest" data-provider="getData" finished-at="2021-03-21T17:47:50 CET" duration-ms="15130" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,12 +28,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- moisturizerTest -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.MoisturizerTest@42039326]" started-at="2021-03-21T17:38:03 CET" name="quit" finished-at="2021-03-21T17:38:04 CET" duration-ms="438" status="PASS">
+        </test-method> <!-- buyBodyLotionTest -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@42039326]" started-at="2021-03-21T17:47:50 CET" name="quit" finished-at="2021-03-21T17:47:50 CET" duration-ms="446" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-      </class> <!-- com.WeatherShopper.testcases.MoisturizerTest -->
+      </class> <!-- com.WeatherShopper.testcases.BuyBodyLotionTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
