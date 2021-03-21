@@ -8,6 +8,7 @@ public class PaymentConfirmationPage extends WeatherShopperBasePage{
 
 	public WeatherShopperPage getPaymentConfirmation() {
 		waitForPageToLoad();
+		getDriver().waitForElementLoad(Constants.PAYMENT_RESULT_PAGE_TEXT_KEY);
 		String paymentStatus = getDriver().getText(Constants.PAYMENT_RESULT_PAGE_TEXT_KEY);
 		
 		log("Payment status is "+paymentStatus);

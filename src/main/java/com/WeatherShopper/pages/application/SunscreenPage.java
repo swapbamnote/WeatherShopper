@@ -2,6 +2,7 @@ package com.WeatherShopper.pages.application;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -12,19 +13,20 @@ import com.WeatherShopper.constants.Constants;
 
 public class SunscreenPage extends WeatherShopperBasePage{
 
-	@FindAll({
+/*	@FindAll({
 		 @FindBy(xpath = Constants.DIV_FIRST_ROW), 
 		 @FindBy(xpath = Constants.DIV_SECOND_ROW),
 	})
-	public List<WebElement> pageOptions;
+	public List<WebElement> pageOptions;*/
 	
 	public WeatherShopperPage selectSunscreen(String productContent) {
 		waitForPageToLoad();
+		List<WebElement> pageOptions = getCurrentDriver().findElements(By.xpath(Constants.All_PRODUCTS));
 		log("Number of products displayed: " +pageOptions.size());
-		WebElement productToBeAdded = getDriver().addToCart(pageOptions,productContent);
+		WebElement productToBeAdded = addToCart(pageOptions,productContent);
 		if(productToBeAdded!=null) {
 			log("Product to be added in the cart: "+productToBeAdded.getText());
-			productToBeAdded.click();
+			productToBeAdded.findElement(By.tagName(Constants.BUTTON_TAG)).click();
 		}
 		else {
 			this.validator(true).fail("No matching product found");

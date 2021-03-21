@@ -26,6 +26,10 @@ public class Constants {
 	public static final String DIV_SECOND_ROW = "//body/div[@class='container']/div[3]/div";
 	public static final By DIV_SECOND_ROW_LOCATOR = By.xpath(DIV_SECOND_ROW);
 	
+	public static final String All_PRODUCTS = "//body/div[@class='container']/div/div";
+	public static final By All_PRODUCTS_LOCATOR = By.xpath(DIV_SECOND_ROW);
+	
+	
 	public static final String GoTo_CHECKOUT_BUTTON = "//button[@onClick='goToCart()']";
 	public static final By GoTo_CHECKOUT_BUTTON_LOCATOR = By.xpath(GoTo_CHECKOUT_BUTTON);
 	
@@ -50,11 +54,17 @@ public class Constants {
 	public static final String MAKE_PAYMENT_BUTTON = "//div[@class='Section-button']/button";
 	public static final By MAKE_PAYMENT_BUTTON_LOCATOR = By.xpath(MAKE_PAYMENT_BUTTON);
 	
-	public static final String PRICE_TEXT = "Price";
+	public static final String PRICE_TEXT = "PRICE";
 	public static final String BUTTON_TAG ="button";
+	public static final String TEMPERATURE_STRING_SPLIT = "degrees.";
+	public static final String CART_ROWS = "//tbody/tr";
+	public static final String CART_COLUMNS = "td";
+	public static final String IFRAME = "iframe";
+	public static final String PRODUCT_PRICE_CHILD = "child::p[2]";
+	public static final String PRODUCT_NAME_CHILD = "child::p[1]";
 	
-	public static final String PAYMENT_RESULT_PAGE_TEXT = "h2";
-	public static final By PAYMENT_RESULT_PAGE_LOCATOR = By.tagName(HOME_PAGE_TEXT);
+	public static final String PAYMENT_RESULT_PAGE_TEXT = "//h2[text()='PAYMENT SUCCESS']";
+	public static final By PAYMENT_RESULT_PAGE_LOCATOR = By.xpath(HOME_PAGE_TEXT);
 
 	public static final String PAYMENT_SUCCESS_TEXT = "PAYMENT SUCCESS";
 	public static final String PAYMENT_FAILED_TEXT = "PAYMENT FAILED";
@@ -85,8 +95,9 @@ public class Constants {
 	public static final String CC_CVV_KEY = "cc_cvv_xpath";
 	public static final String CC_ZIP_CODE_KEY = "cc_zip_xpath";
 	public static final String MAKE_PAYMENT_BUTTON_KEY = "make_payment_xpath";
-	public static final String PAYMENT_RESULT_PAGE_TEXT_KEY = "payment_result_tagName";
-	
-
+	public static final String PAYMENT_RESULT_PAGE_TEXT_KEY = "payment_result_xpath";
+	public static final String All_PRODUCTS_KEY = "all_products_xpath";
+	public static final String CART_ROWS_KEY = "cart_rows_xpath";
+	public static final String CART_COLUMNS_KEY = "cart_columns_tagName";
 
 }

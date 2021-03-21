@@ -2,16 +2,24 @@ package com.WeatherShopper.web;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import com.WeatherShopper.base.pages.WeatherShopperPage;
@@ -52,16 +60,20 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 	}
 
 	public void quit() {
-		// TODO Auto-generated method stub
-		
+		if(driver!=null)
+			driver.quit();
 	}
 	
 	public EventFiringWebDriver getCurrentDriver() {
 		return driver;
 	}
 	
-	public void waitForElementLoad() {
-		
+	public void waitForElementLoad(String objectKey) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		By locator = getObject(objectKey);
+
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));		
 	}
 
 	public void click(String objectKey) {
@@ -82,52 +94,5 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 		return driver.findElement(getObject(objectKey)).getText();
 	}
 	
-	
-	public List<Integer> getTemperature(String tempInfo) {
-		String [] strArr = tempInfo.split("degrees.");
-		int n=0;
-		
-		List<Integer> tempArray = new ArrayList<Integer>();
-
-		for(int i=0; i<strArr.length; i++) {
-			String num = strArr[i].replaceAll("[^0-9]", "");
-			n = Integer.parseInt(num);
-			tempArray.add(n);
-		}
-		return tempArray;
-	}
-	
-	public WebElement addToCart(List<WebElement> pageOptions, String lotionContent) {
-		List<Integer> priceList = new ArrayList<Integer>();
-		
-		for(WebElement element: pageOptions) {
-			//System.out.println(element.getText());
-			if(element.getText().toUpperCase().contains(lotionContent)) {
-				//System.out.println(element.getText());
-				List<WebElement> childElements = element.findElements(By.xpath(".//*"));
-				for(int i=0; i<childElements.size(); i++) {
-					//System.out.println(childElements.get(i).getText());
-					if(childElements.get(i).getText().contains(Constants.PRICE_TEXT)) {
-						priceList.add(Integer.parseInt(childElements.get(i).getText().replaceAll("[^0-9]", "")));
-						break;
-					}
-				}
-				
-			}
-		}
-		System.out.println(priceList);
-        Collections.sort(priceList); 
-		System.out.println(priceList);
-        int cheapProduct = priceList.get(0);
-        //System.out.println(cheapProduct);
-        for(WebElement element: pageOptions) {
-        	//System.out.println(element.getText());
-        	if(element.getText().toUpperCase().contains(String.valueOf(cheapProduct))) {
-        		//System.out.println(element.getText());
-        		return element.findElement(By.tagName(Constants.BUTTON_TAG));
-        	}
-        }
-        return null;
-	}
 	
 }

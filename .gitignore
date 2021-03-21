@@ -20,3 +20,5 @@ src/main/java/com/WeatherShopper/.DS_Store
 .settings/
 .idea/
 WeatherShopper.iml
+test-output/
+reports/

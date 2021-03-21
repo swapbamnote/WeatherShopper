@@ -15,7 +15,8 @@ public interface WebConnector extends WeatherShopperWebConnector{
 	void navigate(String urlKey);
 	void quit();
 	EventFiringWebDriver getCurrentDriver();
-	void waitForElementLoad();
+	void waitForElementLoad(String objectKey);
+	boolean isElementPresent(String objectKey);
 	WeatherShopperTestSession getSession(); 
 	boolean isStopExecution();
 	void setStopExecution(boolean stopExecution);
@@ -29,6 +30,4 @@ public interface WebConnector extends WeatherShopperWebConnector{
 	void type(String objectKey, String data);
 	void clear(String objectKey);
 	String getText(String objectKey);
-	List<Integer> getTemperature(String tempContent);
-	WebElement addToCart(List<WebElement> pageOptions, String lotionContent);
 }

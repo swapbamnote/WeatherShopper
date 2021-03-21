@@ -1,10 +1,13 @@
 package com.WeatherShopper.web;
 
 import java.time.Duration;
+import java.util.Hashtable;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -37,7 +40,23 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		By locator = getObject(objectKey);
 		String actualText = driver.findElement(locator).getText();
 		if(!actualText.equals(expectedText)) {
-			fail("Text do not match, got text as "+actualText);
+			fail("Text do not match, expected: "+expectedText+ "actual text: "+actualText);
+		}
+		return getSession().getCurrentPage();
+	}
+	
+	public WeatherShopperPage validateCart(Hashtable<String, String> addedProductsOnLotionPage) {
+		Hashtable<String, String> cartProducts = new Hashtable<String, String>();
+		List<WebElement> cartRows = driver.findElements(getObject(Constants.CART_ROWS_KEY));
+		for(int rNum=0; rNum< cartRows.size(); rNum++) {
+			WebElement row= cartRows.get(rNum);
+			List<WebElement> cells = row.findElements(getObject(Constants.CART_COLUMNS_KEY));
+			cartProducts.put(cells.get(0).getText(), cells.get(1).getText());
+		}
+		log("Displayed products in a cart: "+cartProducts);
+		log("Added products on a lotion page: "+addedProductsOnLotionPage);
+		if(!cartProducts.equals(addedProductsOnLotionPage)) {
+			fail("Cart do not match, Expected Cart: "+addedProductsOnLotionPage+ "Displayed Cart: "+cartProducts);
 		}
 		return getSession().getCurrentPage();
 	}
@@ -68,9 +87,7 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		return (WeatherShopperTestSession) Reporter.getCurrentTestResult().getTestContext().getAttribute("session");
 	}
 	
-	
 	public By getObject(String objectKey) {
-		log("Finding locator for "+objectKey);
 		By locatorStrategy = null;
 		
 		if(objectKey.endsWith("_id")) 

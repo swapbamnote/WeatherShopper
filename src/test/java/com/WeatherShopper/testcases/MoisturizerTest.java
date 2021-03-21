@@ -49,8 +49,10 @@ public class MoisturizerTest extends TestBase{
 		
 		weatherPage
 		.goToCheckoutPage()
+		.validator(true).validateCart(session.getProductCart())
 		.addPaymentDetails(data.get("Email"),data.get("CCNumber"),data.get("CCDate"),data.get("CVV"),data.get("CCZipCode"))
-		.getPaymentConfirmation();	
+		.getPaymentConfirmation()
+		.validator(true).validateText(Constants.PAYMENT_RESULT_PAGE_TEXT_KEY, Constants.PAYMENT_SUCCESS_TEXT);
 
 		session.end();
 				

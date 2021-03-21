@@ -16,19 +16,15 @@ import com.WeatherShopper.constants.Constants;
 
 public class MoisturizerPage extends WeatherShopperBasePage {
 	
-	@FindAll({
-		 @FindBy(xpath = Constants.DIV_FIRST_ROW), 
-		 @FindBy(xpath = Constants.DIV_SECOND_ROW),
-	})
-	public List<WebElement> pageOptions;
-	
 	public WeatherShopperPage selectMoisturizer(String productContent) {
 		waitForPageToLoad();
+		List<WebElement> pageOptions = getCurrentDriver().findElements(By.xpath(Constants.All_PRODUCTS));
 		log("Number of products displayed: " +pageOptions.size());
-		WebElement productToBeAdded = getDriver().addToCart(pageOptions,productContent);
+		WebElement productToBeAdded = addToCart(pageOptions,productContent);
 		if(productToBeAdded!=null) {
+			System.out.println(productToBeAdded.getText());
 			log("Product to be added in the cart: "+productToBeAdded.getText());
-			productToBeAdded.click();
+			productToBeAdded.findElement(By.tagName(Constants.BUTTON_TAG)).click();
 		}
 		else {
 			this.validator(true).fail("No matching product found");

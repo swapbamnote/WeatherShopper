@@ -3,6 +3,8 @@ package com.WeatherShopper.session;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Hashtable;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -27,6 +29,8 @@ public class WeatherShopperTestSession {
 	ExtentReports reports;
 	ExtentTest test;
 	boolean executeListener;
+	Hashtable<String, String> productCart;
+
 	
 	public WeatherShopperTestSession() {
 		con = new WeatherShopperDriver();
@@ -55,7 +59,6 @@ public class WeatherShopperTestSession {
 	}
 	
 	public void end() {
-		
 		getCon().assertAll();
 	}
 	
@@ -108,6 +111,19 @@ public class WeatherShopperTestSession {
 	public void setExecuteListener(boolean executeListener) {
 		this.executeListener = executeListener;
 	}
+	
+	public Hashtable<String, String> getProductCart() {
+		return productCart;
+	}
+	public void setProductCart(Hashtable<String, String> productCart) {
+		this.productCart = productCart;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

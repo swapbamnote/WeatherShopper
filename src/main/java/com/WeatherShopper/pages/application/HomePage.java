@@ -16,7 +16,7 @@ public class HomePage extends WeatherShopperBasePage{
 	public WeatherShopperPage selectLotionPage() {
 		waitForPageToLoad();
 		String temperatureInfo = getCurrentDriver().findElement(By.xpath(Constants.INFO)).getAttribute("data-content");
-		List<Integer> temperatures = getDriver().getTemperature(temperatureInfo);
+		List<Integer> temperatures = getTemperature(temperatureInfo);
 		
 		int maxTemp = Math.max(temperatures.get(0), temperatures.get(1));
 		int minTemp = Math.min(temperatures.get(0), temperatures.get(1));
