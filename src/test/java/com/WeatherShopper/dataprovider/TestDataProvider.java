@@ -9,12 +9,10 @@ import com.WeatherShopper.util.Xls_Reader;
 
 public class TestDataProvider {
 
-	static Xls_Reader xls = new Xls_Reader(System.getProperty("user.dir")+"//Data.xlsx");
-
-	
 	@DataProvider
 	public static Object[][] getData(Method m) {
-		
-		return DataUtil.getData(m.getName(), xls);
+		return new DataUtil().getData(m.getName(), new Xls_Reader(System.getProperty("user.dir")+"//Data.xlsx"));
 	}
+	
+	// this was I can have multiple data provider with different input excel data
 }

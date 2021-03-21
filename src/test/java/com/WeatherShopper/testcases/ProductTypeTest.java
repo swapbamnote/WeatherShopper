@@ -29,12 +29,11 @@ import com.aventstack.extentreports.Status;
 
 public class ProductTypeTest extends TestBase{
 	
-	
 	@Test(dataProviderClass = TestDataProvider.class, dataProvider = "getData")
 	public void productTypeTest(Hashtable<String, String> data) {
 		session.log(data.toString());
 		
-		if(!DataUtil.isRunnable(testName, xls) || data.get("Runmode").equalsIgnoreCase("N")) {
+		if(!new DataUtil().isRunnable(testName, xls) || data.get("Runmode").equalsIgnoreCase("N")) {
 			//skip in extent report
 			session.skipTest("Skipping the test as Runmode is No");
 			//skip in testng

@@ -6,7 +6,7 @@ import com.WeatherShopper.constants.Constants;
 
 public class DataUtil {
 	
-	public static Object[][] getData(String testName, Xls_Reader xls){
+	public Object[][] getData(String testName, Xls_Reader xls){
 		//String testName="CreateLeadTest";
 		String sheetName="TestCases";
 		
@@ -55,7 +55,7 @@ public class DataUtil {
 	}
 	// true - Y
 	// false - N
-	public static boolean isRunnable(String testName, Xls_Reader xls) {
+	public boolean isRunnable(String testName, Xls_Reader xls) {
 		//Xls_Reader xls = new Xls_Reader(System.getProperty("user.dir")+"//Data.xlsx");
 		//String testName="LoginTest";
 		String sheetName=Constants.TEST_STATUS_SHEET;

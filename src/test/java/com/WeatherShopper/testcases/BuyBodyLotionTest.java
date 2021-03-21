@@ -23,7 +23,7 @@ public class BuyBodyLotionTest extends TestBase{
 	public void buyBodyLotionTest(Hashtable<String, String> data) {
 		session.log(data.toString());
 		
-		if(!DataUtil.isRunnable(testName, xls) || data.get("Runmode").equalsIgnoreCase("N")) {
+		if(!new DataUtil().isRunnable(testName, xls) || data.get("Runmode").equalsIgnoreCase("N")) {
 			//skip in extent report
 			session.skipTest("Skipping the test as Runmode is No");
 			//skip in testng
