@@ -13,6 +13,7 @@ import com.WeatherShopper.constants.Constants;
 
 public class SunscreenPage extends WeatherShopperBasePage{
 
+	// used @Find annotations to show pagefactory element initialization
 	@FindAll({
 		 @FindBy(xpath = Constants.DIV_FIRST_ROW), 
 		 @FindBy(xpath = Constants.DIV_SECOND_ROW),

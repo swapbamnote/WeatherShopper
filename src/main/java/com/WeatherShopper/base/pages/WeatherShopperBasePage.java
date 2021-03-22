@@ -63,7 +63,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 
 	// validation functions can be used with validator
 	public WebConnector validator(boolean stopExecution) {
-		// update the flag in web layer
+		// to stop execution; update the flag in web layer
 		getSession().getCon().setStopExecution(stopExecution);
 		return getSession().getCon();
 	}

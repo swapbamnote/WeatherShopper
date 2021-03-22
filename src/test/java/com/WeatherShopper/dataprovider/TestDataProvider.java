@@ -14,5 +14,4 @@ public class TestDataProvider {
 		return new DataUtil().getData(m.getName(), new Xls_Reader(System.getProperty("user.dir")+"//Data.xlsx"));
 	}
 	
-	// this was I can have multiple data provider with different input excel data
 }
