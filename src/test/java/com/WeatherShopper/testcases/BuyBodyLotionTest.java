@@ -33,14 +33,18 @@ public class BuyBodyLotionTest extends TestBase{
 			.openBrowser(data.get("Browser"))
 			.goToHomePage()
 			.validator(false).validateTitle(Constants.HOME_PAGE_TITLE_KEY)
+			.validator(false).validateText(Constants.MOISTURIZER_TEXT_KEY, Constants.MOISURIZER)
+			.validator(false).validateText(Constants.SUNSCREEN_TEXT_KEY, Constants.SUNSCREEN)
 			.selectLotionPage();
 
 		if(page instanceof MoisturizerPage) {
-			weatherPage = page.selectMoisturizer(data.get("MoisturizerContent1"))
-			.selectMoisturizer(data.get("MoisturizerContent2"));
+			weatherPage = page
+						.selectMoisturizer(data.get("MoisturizerContent1"))
+						.selectMoisturizer(data.get("MoisturizerContent2"));
 		} else if(page instanceof SunscreenPage) {
-			 weatherPage = page.selectSunscreen(data.get("SunscreenContent1"))
-			.selectSunscreen(data.get("SunscreenContent2"));
+			 weatherPage = page
+					 	.selectSunscreen(data.get("SunscreenContent1"))
+					 	.selectSunscreen(data.get("SunscreenContent2"));
 		} else {
 			page.validator(true).fail("Temperature is between 19°C to 34°C, so can not select any Lotion");
 		}

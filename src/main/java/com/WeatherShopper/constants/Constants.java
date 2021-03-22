@@ -64,6 +64,8 @@ public class Constants {
 	public static final String PRODUCT_PRICE_CHILD = "child::p[2]";
 	public static final String PRODUCT_NAME_CHILD = "child::p[1]";
 	public static final String TOTAL_PRICE = "//p[@id='total']";
+	public static final String MOISURIZER = "Moisturizers";
+	public static final String SUNSCREEN = "Sunscreens";
 	
 	public static final String PAYMENT_RESULT_PAGE_TEXT = "//h2[text()='PAYMENT SUCCESS']";
 	public static final By PAYMENT_RESULT_PAGE_LOCATOR = By.xpath(HOME_PAGE_TEXT);
@@ -87,6 +89,8 @@ public class Constants {
 	public static final String HOME_PAGE_TITLE_KEY = "homepage_title";
 	public static final String HOME_PAGE_TEXT_KEY = "homepage_text_tagName";
 	public static final String CURRENT_TEMPERATURE_KEY = "current_temperature_id";
+	public static final String MOISTURIZER_TEXT_KEY = "moisturizer_text_xpath";
+	public static final String SUNSCREEN_TEXT_KEY = "sunscreen_text_xpath";
 	public static final String BUY_MOISTURIZER_KEY = "moisturizer_xpath";
 	public static final String BUY_SUNSCREEN_KEY = "sunscreen_xpath";
 	public static final String GoTo_CHECKOUT_BUTTON_KEY = "go_to_checkout_button_xpath";
