@@ -1,24 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-22T02:42:26 CET" name="Default suite" finished-at="2021-03-22T02:42:58 CET" duration-ms="31354">
+  <suite started-at="2021-03-22T18:27:54 CET" name="Suite" finished-at="2021-03-22T18:28:21 CET" duration-ms="27027">
     <groups>
     </groups>
-    <test started-at="2021-03-22T02:42:26 CET" name="Default test" finished-at="2021-03-22T02:42:58 CET" duration-ms="31354">
-      <class name="com.WeatherShopper.testcases.BuyBodyLotionTest">
-        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e]" started-at="2021-03-22T02:42:27 CET" name="initialize" finished-at="2021-03-22T02:42:27 CET" duration-ms="312" status="PASS">
+    <test started-at="2021-03-22T18:27:54 CET" name="HomePage Test" finished-at="2021-03-22T18:28:02 CET" duration-ms="7172">
+      <class name="com.WeatherShopper.testcases.HomePageTest">
+        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e]" started-at="2021-03-22T18:27:54 CET" name="initialize" finished-at="2021-03-22T18:27:55 CET" duration-ms="254" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=BuyBodyLotionTest.buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=HomePageTest.homePageTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e]" started-at="2021-03-22T02:42:27 CET" name="buyBodyLotionTest" data-provider="getData" finished-at="2021-03-22T02:42:42 CET" duration-ms="15374" status="PASS">
+        <test-method signature="homePageTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e]" started-at="2021-03-22T18:27:55 CET" name="homePageTest" data-provider="getData" finished-at="2021-03-22T18:27:59 CET" duration-ms="4150" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=Y, Browser=chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePageTest -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e]" started-at="2021-03-22T18:27:59 CET" name="quit" finished-at="2021-03-22T18:27:59 CET" duration-ms="425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e]" started-at="2021-03-22T18:27:59 CET" name="initialize" finished-at="2021-03-22T18:27:59 CET" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=HomePageTest.homePageTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method signature="homePageTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e]" started-at="2021-03-22T18:27:59 CET" name="homePageTest" data-provider="getData" finished-at="2021-03-22T18:28:01 CET" duration-ms="2136" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Runmode=Y, Browser=chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePageTest -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.HomePageTest@68b32e3e]" started-at="2021-03-22T18:28:01 CET" name="quit" finished-at="2021-03-22T18:28:02 CET" duration-ms="101" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- com.WeatherShopper.testcases.HomePageTest -->
+    </test> <!-- HomePage Test -->
+    <test started-at="2021-03-22T18:27:54 CET" name="Buy Lotion Test" finished-at="2021-03-22T18:28:21 CET" duration-ms="27027">
+      <class name="com.WeatherShopper.testcases.BuyBodyLotionTest">
+        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9]" started-at="2021-03-22T18:27:54 CET" name="initialize" finished-at="2021-03-22T18:27:55 CET" duration-ms="254" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name={null} status=CREATED method=BuyBodyLotionTest.buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method signature="buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9]" started-at="2021-03-22T18:27:55 CET" name="buyBodyLotionTest" data-provider="getData" finished-at="2021-03-22T18:28:08 CET" duration-ms="13078" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,37 +85,37 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyBodyLotionTest -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e]" started-at="2021-03-22T02:42:42 CET" name="quit" finished-at="2021-03-22T02:42:43 CET" duration-ms="400" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9]" started-at="2021-03-22T18:28:08 CET" name="quit" finished-at="2021-03-22T18:28:08 CET" duration-ms="127" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e]" started-at="2021-03-22T02:42:43 CET" name="initialize" finished-at="2021-03-22T02:42:43 CET" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="initialize(org.testng.ITestResult)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9]" started-at="2021-03-22T18:28:08 CET" name="initialize" finished-at="2021-03-22T18:28:08 CET" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name={null} status=CREATED method=BuyBodyLotionTest.buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e] output={null}]]]>
+                <![CDATA[[TestResult name={null} status=CREATED method=BuyBodyLotionTest.buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e]" started-at="2021-03-22T02:42:43 CET" name="buyBodyLotionTest" data-provider="getData" finished-at="2021-03-22T02:42:57 CET" duration-ms="14508" status="PASS">
+        <test-method signature="buyBodyLotionTest(java.util.Hashtable)[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9]" started-at="2021-03-22T18:28:08 CET" name="buyBodyLotionTest" data-provider="getData" finished-at="2021-03-22T18:28:21 CET" duration-ms="13349" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gmail.com, SunscreenContent2=SPF-30, SunscreenContent1=SPF-50, CCZipCode=12345, CVV=123, Browser=firefox, CCNumber=4242424242424242}]]>
+                <![CDATA[{CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gmail.com, SunscreenContent2=SPF-30, SunscreenContent1=SPF-50, CCZipCode=12345, CVV=123, Browser=chrome, CCNumber=4242424242424242}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- buyBodyLotionTest -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@68b32e3e]" started-at="2021-03-22T02:42:57 CET" name="quit" finished-at="2021-03-22T02:42:58 CET" duration-ms="666" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:com.WeatherShopper.testcases.BuyBodyLotionTest@3549bca9]" started-at="2021-03-22T18:28:21 CET" name="quit" finished-at="2021-03-22T18:28:21 CET" duration-ms="117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- com.WeatherShopper.testcases.BuyBodyLotionTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Buy Lotion Test -->
+  </suite> <!-- Suite -->
 </testng-results>

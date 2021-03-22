@@ -37,8 +37,6 @@ public class CheckoutPage extends WeatherShopperBasePage{
 	public WeatherShopperPage addPaymentDetails(String email, String ccNum, String expiryDate, String cvv, String zipCode) {
 		waitForPageToLoad();
 
-		
-
 		getDriver().click(Constants.PAY_WITH_CARD_BUTTON_KEY);
 		List<WebElement> frames = getCurrentDriver().findElements(By.tagName(Constants.IFRAME));
 		for(int i=0; i<frames.size(); i++) {

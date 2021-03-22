@@ -7,7 +7,7 @@
         <methods>
           <include name="initialize"/>
           <include name="quit"/>
-          <include name="buyBodyLotionTest" invocation-numbers="1"/>
+          <include name="buyBodyLotionTest" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.WeatherShopper.testcases.BuyBodyLotionTest -->
     </classes>

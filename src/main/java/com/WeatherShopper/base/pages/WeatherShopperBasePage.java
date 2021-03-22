@@ -10,6 +10,7 @@ import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Reporter;
 
@@ -22,7 +23,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 
 	public WeatherShopperBasePage() {
 		System.out.println("*********BasePage Constructor**********");
-		//PageFactory.initElements(getCurrentDriver(), this); //initialize elements
+		PageFactory.initElements(getCurrentDriver(), this); //initialize elements
 
 		getSession().setCurrentPage(this); //set the page in the session
 		//getSession().takeScreenshot(); take sceenshot whenever any page opens
@@ -150,13 +151,11 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		}
 
 		TreeMap<Integer, String> tm = new TreeMap<Integer, String>(productsTable);
-
 		Set<Integer> keys = tm.keySet();
 	    Iterator<Integer> itr = keys.iterator();
 		Integer it = itr.next();
 
         prodTable.put(tm.get(it),String.valueOf(it));
-
         getSession().setProductCart(prodTable);
         for(WebElement element: pageOptions) {
         	if(element.getText().toUpperCase().contains(String.valueOf(it))) {

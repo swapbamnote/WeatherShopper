@@ -34,6 +34,7 @@ public class WeatherShopperTestSession {
 		con = new WeatherShopperDriver();
 	}
 	public void init(String testName) {
+		//setExecuteListener(true);
 		if(Reporter.getCurrentTestResult().getTestContext().getAttribute("session") == null) {
 			Reporter.getCurrentTestResult().getTestContext().setAttribute("session", this);
 		}
@@ -62,6 +63,7 @@ public class WeatherShopperTestSession {
 	
 	/***********Reporting functions************/
 	public void log(String message) {
+		System.out.println(message);
 		test.log(Status.INFO, message);
 	}
 	
@@ -72,6 +74,7 @@ public class WeatherShopperTestSession {
 		// quit the browser
 		if(getCon() !=null)
 			getCon().quit();
+		Reporter.getCurrentTestResult().getTestContext().setAttribute("session",null);
 	}
 	
 	public void failTest(String failureMessage) {
