@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Hashtable;
-import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -13,7 +12,6 @@ import org.testng.Reporter;
 
 import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.constants.Constants;
-import com.WeatherShopper.pages.application.LaunchPage;
 import com.WeatherShopper.reports.ExtentManager;
 import com.WeatherShopper.web.WeatherShopperDriver;
 import com.WeatherShopper.web.WebConnector;

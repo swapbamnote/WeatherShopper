@@ -31,7 +31,6 @@ public class Constants {
 	public static final String All_PRODUCTS = "//body/div[@class='container']/div/div";
 	public static final By All_PRODUCTS_LOCATOR = By.xpath(DIV_SECOND_ROW);
 	
-	
 	public static final String GoTo_CHECKOUT_BUTTON = "//button[@onClick='goToCart()']";
 	public static final By GoTo_CHECKOUT_BUTTON_LOCATOR = By.xpath(GoTo_CHECKOUT_BUTTON);
 	
@@ -64,6 +63,7 @@ public class Constants {
 	public static final String IFRAME = "iframe";
 	public static final String PRODUCT_PRICE_CHILD = "child::p[2]";
 	public static final String PRODUCT_NAME_CHILD = "child::p[1]";
+	public static final String TOTAL_PRICE = "//p[@id='total']";
 	
 	public static final String PAYMENT_RESULT_PAGE_TEXT = "//h2[text()='PAYMENT SUCCESS']";
 	public static final By PAYMENT_RESULT_PAGE_LOCATOR = By.xpath(HOME_PAGE_TEXT);

@@ -6,17 +6,18 @@ import com.WeatherShopper.session.WeatherShopperTestSession;
 import com.WeatherShopper.web.WebConnector;
 
 public interface WeatherShopperPage extends WeatherShopperApplicationPage{
-	
+
 	//normal browser functions
 	WeatherShopperPage openBrowser(String browserName);
-	WeatherShopperTestSession getSession(); 
+	WeatherShopperTestSession getSession();
 	void waitForPageToLoad();
 	void wait(int time);
 	WebConnector getDriver();
 	void log(String message);
+	void fail(String message);
 	EventFiringWebDriver getCurrentDriver();
 	WebConnector validator(boolean stopExecution);
-	
+
 	/*//application functions
 	WeatherShopperPage goToHomePage();
 	WeatherShopperPage selectLotionPage();
@@ -25,7 +26,7 @@ public interface WeatherShopperPage extends WeatherShopperApplicationPage{
 	WeatherShopperPage goToCheckoutPage();
 	WeatherShopperPage addPaymentDetails(String email, String ccNum, String expiryDate, String cvv, String zipCode);
 	WeatherShopperPage getPaymentConfirmation();*/
-	
-	
-	
+
+
+
 }

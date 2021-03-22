@@ -17,8 +17,8 @@ public class TestBase {
 	public void initialize(ITestResult result) {
 		testName = result.getMethod().getMethodName().toUpperCase();
 		//webconnector is initialize
-		session = new WeatherShopperTestSession();//new driver, new browser, onesessionpertest
-		session.init(testName); //store session in testContext and return object of launchpage
+		session = new WeatherShopperTestSession();//new driver, new browser, one session per test
+		session.init(testName); //store session in testContext 
 	}
 	
 	@AfterMethod

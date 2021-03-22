@@ -14,6 +14,7 @@ public interface WeatherShopperApplicationPage {
 	WeatherShopperPage selectMoisturizer(String productContent);
 	WeatherShopperPage selectSunscreen(String productContent);
 	WeatherShopperPage goToCheckoutPage();
+	WeatherShopperPage verifyCart();
 	WeatherShopperPage addPaymentDetails(String email, String ccNum, String expiryDate, String cvv, String zipCode);
 	WeatherShopperPage getPaymentConfirmation();
 	List<Integer> getTemperature(String tempContent);

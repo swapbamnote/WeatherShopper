@@ -24,7 +24,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 	public WeatherShopperBasePage() {
 		System.out.println("*********BasePage Constructor**********");
 		//PageFactory.initElements(getCurrentDriver(), this); //initialize elements
-		
+
 		getSession().setCurrentPage(this); //set the page in the session
 		//getSession().takeScreenshot(); take sceenshot whenever any page opens
 	}
@@ -41,19 +41,19 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		return null;
 	}
 	public WeatherShopperPage selectMoisturizer(String productContent) {
-		return null;	
+		return null;
 	}
 	public WeatherShopperPage selectSunscreen(String productContent) {
-		return null;	
+		return null;
 	}
 	public WeatherShopperPage addPaymentDetails(String email, String ccNum, String expiryDate, String cvv, String zipCode) {
-		return null;	
+		return null;
 	}
 	public WeatherShopperPage getPaymentConfirmation() {
 		return null;
 	}
-	
-	public WeatherShopperPage goToSunscreenPage() {
+
+	public WeatherShopperPage verifyCart() {
 		return null;
 	}
 
@@ -66,7 +66,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		getSession().getCon().setStopExecution(stopExecution);
 		return getSession().getCon();
 	}
-	
+
 	public WeatherShopperTestSession getSession() {
 		return (WeatherShopperTestSession) Reporter.getCurrentTestResult().getTestContext().getAttribute("session");
 	}
@@ -78,15 +78,17 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 	public EventFiringWebDriver getCurrentDriver() {
 		return getSession().getCon().getCurrentDriver();
 	}
-	
+
 	public void log(String message) {
 		getSession().log(message);
 	}
-	
+
+	public void fail(String message) { getSession().getCon().fail(message); };
+
 	public void waitForPageToLoad() {
 		JavascriptExecutor js = (JavascriptExecutor) getCurrentDriver();
 		int i=1;
-		
+
 		//check for page load
 		while(i!=10) {
 			String state = (String) js.executeScript("return document.readyState;");
@@ -99,7 +101,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 			}
 			i++;
 		}
-		
+
 		//check for jquery/ajax status
 		/*i=1;
 		while(i!=10) {
@@ -112,9 +114,9 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 				wait(2);
 			}
 			i++;
-		}*/	
+		}*/
 	}
-	
+
 	public void wait(int time) {
 		try {
 			Thread.sleep(time*1000);
@@ -122,12 +124,12 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public List<Integer> getTemperature(String tempInfo) {
 		String [] strArr = tempInfo.split(Constants.TEMPERATURE_STRING_SPLIT);
 		int n=0;
-		
+
 		List<Integer> tempArray = new ArrayList<Integer>();
 
 		for(int i=0; i<strArr.length; i++) {
@@ -137,7 +139,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		}
 		return tempArray;
 	}
-	
+
 	public WebElement addToCart(List<WebElement> pageOptions, String lotionContent) {
 		Hashtable<Integer, String> productsTable = new Hashtable<Integer, String>();
 		for(WebElement element: pageOptions) {
@@ -147,15 +149,15 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 				productsTable.put(productPrice, productName);
 			}
 		}
-		
-		TreeMap<Integer, String> tm = new TreeMap<Integer, String>(productsTable); 
-		
-		Set<Integer> keys = tm.keySet(); 
-	    Iterator<Integer> itr = keys.iterator(); 
-		Integer it = itr.next(); 
+
+		TreeMap<Integer, String> tm = new TreeMap<Integer, String>(productsTable);
+
+		Set<Integer> keys = tm.keySet();
+	    Iterator<Integer> itr = keys.iterator();
+		Integer it = itr.next();
 
         prodTable.put(tm.get(it),String.valueOf(it));
-        
+
         getSession().setProductCart(prodTable);
         for(WebElement element: pageOptions) {
         	if(element.getText().toUpperCase().contains(String.valueOf(it))) {

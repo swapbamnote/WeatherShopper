@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.WeatherShopper.testcases.ProductTypeTest">
+      <class name="com.WeatherShopper.testcases.BuyBodyLotionTest">
         <methods>
-          <include name="productTypeTest" invocation-numbers="1 2"/>
           <include name="initialize"/>
           <include name="quit"/>
+          <include name="buyBodyLotionTest" invocation-numbers="1"/>
         </methods>
-      </class> <!-- com.WeatherShopper.testcases.ProductTypeTest -->
+      </class> <!-- com.WeatherShopper.testcases.BuyBodyLotionTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
