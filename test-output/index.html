@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-skipped">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,  2 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.WeatherShopper.testcases.ProductTypeTest" class="method navigator-link" hash-for-method="productTypeTest({Runmode=N, Browser=firefox})">productTypeTest({Runmode=N, Browser=firefox})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.WeatherShopper.testcases.ProductTypeTest" class="method navigator-link" hash-for-method="productTypeTest({Runmode=N, Browser=chrome})">productTypeTest({Runmode=N, Browser=chrome})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +123,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.WeatherShopper.testcases.BuyBodyLotionTest" class="method navigator-link" hash-for-method="buyBodyLotionTest({CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gma...)">buyBodyLotionTest({CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gma...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.WeatherShopper.testcases.ProductTypeTest" class="method navigator-link" hash-for-method="productTypeTest({Runmode=Y, Browser=safari})">productTypeTest({Runmode=Y, Browser=safari})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -119,18 +138,106 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.WeatherShopper.testcases.BuyBodyLotionTest</span>
+              <img src="skipped.png"/>
+              <span class="class-name">com.WeatherShopper.testcases.ProductTypeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="buyBodyLotionTest({CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gma...)">
-                  </a> <!-- buyBodyLotionTest({CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gma...) -->
-                  <span class="method-name">buyBodyLotionTest</span>
-                  <span class="parameters">({CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gmail.com, SunscreenContent2=SPF-30, SunscreenContent1=SPF-50, CCZipCode=12345, CVV=123, Browser=Chrome, CCNumber=4242424242424242})</span>
+                  <a name="productTypeTest({Runmode=N, Browser=firefox})">
+                  </a> <!-- productTypeTest({Runmode=N, Browser=firefox}) -->
+                  <span class="method-name">productTypeTest</span>
+                  <span class="parameters">({Runmode=N, Browser=firefox})</span>
+                  <div class="stack-trace">org.testng.SkipException: Skipping the test as Runmode is No
+	at com.WeatherShopper.testcases.ProductTypeTest.productTypeTest(ProductTypeTest.java:40)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="productTypeTest({Runmode=N, Browser=chrome})">
+                  </a> <!-- productTypeTest({Runmode=N, Browser=chrome}) -->
+                  <span class="method-name">productTypeTest</span>
+                  <span class="parameters">({Runmode=N, Browser=chrome})</span>
+                  <div class="stack-trace">org.testng.SkipException: Skipping the test as Runmode is No
+	at com.WeatherShopper.testcases.ProductTypeTest.productTypeTest(ProductTypeTest.java:40)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-skipped -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.WeatherShopper.testcases.ProductTypeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="productTypeTest({Runmode=Y, Browser=safari})">
+                  </a> <!-- productTypeTest({Runmode=Y, Browser=safari}) -->
+                  <span class="method-name">productTypeTest</span>
+                  <span class="parameters">({Runmode=Y, Browser=safari})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -138,7 +245,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/81/ftd05v452t3f7lwxjsssl0qm0000gn/T/testng-eclipse--1603189862/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/81/ftd05v452t3f7lwxjsssl0qm0000gn/T/testng-eclipse--1832654790/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -147,7 +254,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.WeatherShopper.testcases.BuyBodyLotionTest&quot;/&gt;
+      &lt;class name=&quot;com.WeatherShopper.testcases.ProductTypeTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -187,16 +294,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'buyBodyLotionTest')
-data.setCell(0, 2, 'com.WeatherShopper.testcases.BuyBodyLotionTest')
-data.setCell(0, 3, 16779);
+data.setCell(0, 1, 'productTypeTest')
+data.setCell(0, 2, 'com.WeatherShopper.testcases.ProductTypeTest')
+data.setCell(0, 3, 2672);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'productTypeTest')
+data.setCell(1, 2, 'com.WeatherShopper.testcases.ProductTypeTest')
+data.setCell(1, 3, 2);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'productTypeTest')
+data.setCell(2, 2, 'com.WeatherShopper.testcases.ProductTypeTest')
+data.setCell(2, 3, 1);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -222,18 +337,42 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.WeatherShopper.testcases.BuyBodyLotionTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.WeatherShopper.testcases.ProductTypeTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">initialize([TestResult name={null} status=CREATED method=BuyBodyLotionTest.buyBodyLotionTest(java.util.Hashtabl...)</span>
+                <span class="method-name">initialize([TestResult name={null} status=CREATED method=ProductTypeTest.productTypeTest(java.util.Hashtable)[p...)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">buyBodyLotionTest({CCDate=1222, MoisturizerContent2=ALMOND, MoisturizerContent1=ALOE, Runmode=Y, Email=swapbamnote@gma...)</span>
-                <span class="method-start">335 ms</span>
+                <span class="method-name">productTypeTest({Runmode=Y, Browser=safari})</span>
+                <span class="method-start">255 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">quit</span>
-                <span class="method-start">17118 ms</span>
+                <span class="method-start">2931 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize([TestResult name={null} status=CREATED method=ProductTypeTest.productTypeTest(java.util.Hashtable)[p...)</span>
+                <span class="method-start">3316 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">productTypeTest({Runmode=N, Browser=firefox})</span>
+                <span class="method-start">3317 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">3320 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">initialize([TestResult name={null} status=CREATED method=ProductTypeTest.productTypeTest(java.util.Hashtable)[p...)</span>
+                <span class="method-start">3334 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">productTypeTest({Runmode=N, Browser=chrome})</span>
+                <span class="method-start">3335 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">quit</span>
+                <span class="method-start">3337 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

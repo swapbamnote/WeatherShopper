@@ -1,0 +1,12 @@
+
+Hub and Node- Selenium 4
+java -jar selenium-server-4.0.0-beta-2.jar hub
+java -jar selenium-server-4.0.0-beta-2.jar node
+java -jar selenium-server-4.0.0-beta-2.jar node --port 5556
+java -jar selenium-server-4.0.0-beta-2.jar node --port 5557
+
+
+
+
+
+

@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 
 public class Constants {
 	
+	public static final String GRIDRUN = "N";
+	
 	public static final String BUY_MOISTURIZER = "//a[@href='/moisturizer']";
 	public static final By BUY_MOISTURIZER_LOCATOR = By.xpath(BUY_MOISTURIZER);
 	

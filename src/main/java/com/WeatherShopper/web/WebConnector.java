@@ -11,13 +11,13 @@ import com.WeatherShopper.session.WeatherShopperTestSession;
 
 public interface WebConnector extends WeatherShopperWebConnector{
 
-	void openBrowser(String browserName);
+	void initBrowser(String browserName);
 	void navigate(String urlKey);
 	void quit();
 	EventFiringWebDriver getCurrentDriver();
 	void waitForElementLoad(String objectKey);
 	boolean isElementPresent(String objectKey);
-	WeatherShopperTestSession getSession(); 
+	WeatherShopperTestSession getSession();
 	boolean isStopExecution();
 	void setStopExecution(boolean stopExecution);
 	void assertAll();

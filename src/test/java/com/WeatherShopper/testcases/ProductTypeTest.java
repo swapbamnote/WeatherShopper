@@ -39,14 +39,14 @@ public class ProductTypeTest extends TestBase{
 			//skip in testng
 			throw new SkipException("Skipping the test as Runmode is No");
 		}
-		 
+
+		WeatherShopperPage page =
 		new LaunchPage()
-		.openBrowser("chrome")
+		.openBrowser(data.get("Browser"))
 		.goToHomePage()
 		.validator(false).validateTitle(Constants.HOME_PAGE_TITLE_KEY);
-		
 		session.end();
-				
+
 	}
 
 }
