@@ -1,10 +1,7 @@
 package com.WeatherShopper.base.pages;
 
 import java.util.List;
-
 import org.openqa.selenium.WebElement;
-
-import com.WeatherShopper.web.WebConnector;
 
 public interface WeatherShopperApplicationPage {
 

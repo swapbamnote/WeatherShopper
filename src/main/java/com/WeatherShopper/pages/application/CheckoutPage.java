@@ -2,12 +2,8 @@ package com.WeatherShopper.pages.application;
 
 import java.util.Hashtable;
 import java.util.List;
-import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
 import com.WeatherShopper.base.pages.WeatherShopperBasePage;
 import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.constants.Constants;

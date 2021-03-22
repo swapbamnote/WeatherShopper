@@ -1,12 +1,8 @@
 package com.WeatherShopper.web;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.asserts.SoftAssert;
-
 import com.WeatherShopper.session.WeatherShopperTestSession;
 
 public interface WebConnector extends WeatherShopperWebConnector{

@@ -1,7 +1,6 @@
 package com.WeatherShopper.util;
 
 import java.util.Hashtable;
-
 import com.WeatherShopper.constants.Constants;
 
 public class DataUtil {

@@ -1,11 +1,8 @@
 package com.WeatherShopper.pages.application;
 
-import org.openqa.selenium.support.PageFactory;
-
 import com.WeatherShopper.base.pages.WeatherShopperBasePage;
 import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.constants.Constants;
-import com.WeatherShopper.session.WeatherShopperTestSession;
 
 public class LaunchPage extends WeatherShopperBasePage{
 

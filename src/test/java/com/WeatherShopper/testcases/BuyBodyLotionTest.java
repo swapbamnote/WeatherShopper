@@ -8,10 +8,8 @@ import org.testng.annotations.Test;
 import com.WeatherShopper.base.pages.WeatherShopperPage;
 import com.WeatherShopper.constants.Constants;
 import com.WeatherShopper.dataprovider.TestDataProvider;
-import com.WeatherShopper.pages.application.CheckoutPage;
 import com.WeatherShopper.pages.application.LaunchPage;
 import com.WeatherShopper.pages.application.MoisturizerPage;
-import com.WeatherShopper.pages.application.PaymentConfirmationPage;
 import com.WeatherShopper.pages.application.SunscreenPage;
 import com.WeatherShopper.tests.base.TestBase;
 import com.WeatherShopper.util.DataUtil;
@@ -49,7 +47,6 @@ public class BuyBodyLotionTest extends TestBase{
 
 		weatherPage
 		.goToCheckoutPage()
-		//.validator(true).validateCart(weatherPage.getSession().getProductCart())
 		.verifyCart()
 		.addPaymentDetails(data.get("Email"),data.get("CCNumber"),data.get("CCDate"),data.get("CVV"),data.get("CCZipCode"))
 		.getPaymentConfirmation()
