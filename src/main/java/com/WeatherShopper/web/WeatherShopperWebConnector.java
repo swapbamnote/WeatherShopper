@@ -9,7 +9,6 @@ public interface WeatherShopperWebConnector {
 	WeatherShopperPage validateText(String objectKey, String expectedText);
 	WeatherShopperPage validateElementPresence(String objectKey);
 	WeatherShopperPage validateCart(Hashtable<String, String> objectKey);
-
 	boolean isElementPresent(String objectKey);
 	
 	

@@ -36,6 +36,7 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 	public void initBrowser(String browserName) {
 		log("Opening browser "+browserName);
 
+		// GRID: for executing tests on remote machines
 		if(Constants.GRIDRUN.equals("Y")) {
 			// desired capabilities
 			DesiredCapabilities cap = new DesiredCapabilities();
@@ -56,6 +57,7 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 			}
 
 		}else {
+			// Running locally
 			if(browserName.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver/chromedriver");
 				//ChromeOptions opt = new ChromeOptions();
@@ -69,7 +71,6 @@ public class WeatherShopperDriver extends WeatherShopperValidationDriver{
 			else if(browserName.equalsIgnoreCase("safari")) {
 				driver = new EventFiringWebDriver(new SafariDriver());
 			}
-			
 
 		}
 		driver.register(new WeatherShopperEventListener());

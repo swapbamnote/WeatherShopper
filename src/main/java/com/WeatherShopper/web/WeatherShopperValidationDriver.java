@@ -23,6 +23,7 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 	boolean stopExecution;
 	SoftAssert softAssert = new SoftAssert();
 
+	// Title validation on any page
 	public WeatherShopperPage validateTitle(String expectedTitleKey) {
 		log("Expected Title "+prop.getProperty(expectedTitleKey));
 		log("Actual Title "+driver.getTitle());
@@ -33,6 +34,7 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		return getSession().getCurrentPage();
 	}
 
+	// Text validation on any page
 	public WeatherShopperPage validateText(String objectKey, String expectedText) {
 		By locator = getObject(objectKey);
 		String actualText = driver.findElement(locator).getText();
@@ -42,6 +44,7 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		return getSession().getCurrentPage();
 	}
 	
+	// validate products added in a cart
 	public WeatherShopperPage validateCart(Hashtable<String, String> addedProductsOnLotionPage) {
 		Hashtable<String, String> cartProducts = new Hashtable<String, String>();
 		List<WebElement> cartRows = driver.findElements(getObject(Constants.CART_ROWS_KEY));
@@ -58,6 +61,7 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		return getSession().getCurrentPage();
 	}
 	
+	// validate element presence
 	public WeatherShopperPage validateElementPresence(String objectKey) {
 		
 		if(!isElementPresent(objectKey)) {
@@ -84,6 +88,7 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		return (WeatherShopperTestSession) Reporter.getCurrentTestResult().getTestContext().getAttribute("session");
 	}
 	
+	// finding webelements according to different locator strategy based on properties file
 	public By getObject(String objectKey) {
 		By locatorStrategy = null;
 		
@@ -105,10 +110,12 @@ public abstract class WeatherShopperValidationDriver implements WebConnector {
 		return stopExecution;
 	}
 
+	//decide stop execution
 	public void setStopExecution(boolean stopExecution) {
 		this.stopExecution = stopExecution;
 	}
 	
+	// log soft assertions
 	public void assertAll() {
 		softAssert.assertAll();
 	}

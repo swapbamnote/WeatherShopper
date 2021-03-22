@@ -6,6 +6,7 @@ import com.WeatherShopper.constants.Constants;
 
 public class LaunchPage extends WeatherShopperBasePage{
 
+	// open browser
 	public WeatherShopperPage openBrowser(String browserName) {
 		/*WeatherShopperTestSession session = getSession();
 		session.getCon().openBrowser(browserName);*/
@@ -14,6 +15,7 @@ public class LaunchPage extends WeatherShopperBasePage{
 		return this;
 	}
 
+	// open weather shopper website
 	public WeatherShopperPage goToHomePage() {
 		log("Navigating to Weather shopper website");
 		getDriver().navigate(Constants.URL_KEY);

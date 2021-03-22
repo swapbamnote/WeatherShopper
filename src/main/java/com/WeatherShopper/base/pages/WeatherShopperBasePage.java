@@ -61,6 +61,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		return null;
 	}
 
+	// validation functions can be used with validator
 	public WebConnector validator(boolean stopExecution) {
 		// update the flag in web layer
 		getSession().getCon().setStopExecution(stopExecution);
@@ -125,7 +126,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		}
 	}
 
-
+	// find temperatures from a tooltip displayed on homepage
 	public List<Integer> getTemperature(String tempInfo) {
 		String [] strArr = tempInfo.split(Constants.TEMPERATURE_STRING_SPLIT);
 		int n=0;
@@ -140,6 +141,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 		return tempArray;
 	}
 
+	// add products in a cart based on the product content from input excel
 	public WebElement addToCart(List<WebElement> pageOptions, String lotionContent) {
 		Hashtable<Integer, String> productsTable = new Hashtable<Integer, String>();
 		getSession().setExecuteListener(false);

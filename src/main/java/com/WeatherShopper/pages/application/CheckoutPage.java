@@ -12,6 +12,7 @@ public class CheckoutPage extends WeatherShopperBasePage{
 
 	public WeatherShopperPage verifyCart() {
 		Hashtable<String, String> cartProducts = new Hashtable<String, String>();
+		//read products and their price displayed in a cart
 		List<WebElement> cartRows = getCurrentDriver().findElements(By.xpath(Constants.CART_ROWS));
 		int sumOfProductPrice = 0;
 		getSession().setExecuteListener(false);
