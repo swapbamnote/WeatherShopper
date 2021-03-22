@@ -14,6 +14,7 @@ public class CheckoutPage extends WeatherShopperBasePage{
 		Hashtable<String, String> cartProducts = new Hashtable<String, String>();
 		List<WebElement> cartRows = getCurrentDriver().findElements(By.xpath(Constants.CART_ROWS));
 		int sumOfProductPrice = 0;
+		getSession().setExecuteListener(false);
 		for(int rNum=0; rNum< cartRows.size(); rNum++) {
 			WebElement row = cartRows.get(rNum);
 			List<WebElement> cells = row.findElements(By.xpath(Constants.CART_COLUMNS));
@@ -21,6 +22,8 @@ public class CheckoutPage extends WeatherShopperBasePage{
 			cartProducts.put(cells.get(0).getText(), cells.get(1).getText());
 			sumOfProductPrice = sumOfProductPrice + Integer.parseInt(getSession().getProductCart().get(cells.get(0).getText()));
 		}
+		getSession().setExecuteListener(true);
+
 		log("Displayed products in a cart: "+cartProducts);
 		log("Added products on a lotion page: "+getSession().getProductCart());
 		if(!cartProducts.equals(getSession().getProductCart())) {

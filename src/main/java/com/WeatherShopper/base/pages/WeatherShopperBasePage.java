@@ -142,6 +142,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 
 	public WebElement addToCart(List<WebElement> pageOptions, String lotionContent) {
 		Hashtable<Integer, String> productsTable = new Hashtable<Integer, String>();
+		getSession().setExecuteListener(false);
 		for(WebElement element: pageOptions) {
 			if(element.getText().toUpperCase().contains(lotionContent)) {
 				int productPrice = Integer.parseInt(element.findElement(By.xpath(Constants.PRODUCT_PRICE_CHILD)).getText().replaceAll("[^0-9]", ""));
@@ -149,6 +150,7 @@ public class WeatherShopperBasePage implements WeatherShopperPage{
 				productsTable.put(productPrice, productName);
 			}
 		}
+		getSession().setExecuteListener(true);
 
 		TreeMap<Integer, String> tm = new TreeMap<Integer, String>(productsTable);
 		Set<Integer> keys = tm.keySet();

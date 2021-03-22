@@ -34,7 +34,7 @@ public class WeatherShopperTestSession {
 		con = new WeatherShopperDriver();
 	}
 	public void init(String testName) {
-		//setExecuteListener(true);
+		setExecuteListener(true);
 		if(Reporter.getCurrentTestResult().getTestContext().getAttribute("session") == null) {
 			Reporter.getCurrentTestResult().getTestContext().setAttribute("session", this);
 		}

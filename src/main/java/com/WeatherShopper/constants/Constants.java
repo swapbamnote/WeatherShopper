@@ -29,7 +29,7 @@ public class Constants {
 	public static final By DIV_SECOND_ROW_LOCATOR = By.xpath(DIV_SECOND_ROW);
 	
 	public static final String All_PRODUCTS = "//body/div[@class='container']/div/div";
-	public static final By All_PRODUCTS_LOCATOR = By.xpath(DIV_SECOND_ROW);
+	public static final By All_PRODUCTS_LOCATOR = By.xpath(All_PRODUCTS);
 	
 	public static final String GoTo_CHECKOUT_BUTTON = "//button[@onClick='goToCart()']";
 	public static final By GoTo_CHECKOUT_BUTTON_LOCATOR = By.xpath(GoTo_CHECKOUT_BUTTON);

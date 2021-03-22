@@ -17,7 +17,6 @@ public class TestBase {
 
 	@BeforeMethod
 	public void initialize(ITestResult result) {
-		System.out.println("@BeforeMethod");
 		testName = result.getMethod().getMethodName().toUpperCase();
 		//webconnector is initialize
 		session = new WeatherShopperTestSession();//new driver, new browser, one session per test
